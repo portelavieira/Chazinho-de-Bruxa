@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c3vat1v3nor6b"]
+[gd_scene load_steps=25 format=4 uid="uid://c3vat1v3nor6b"]
 
 [ext_resource type="Texture2D" uid="uid://betcmuwxhw0ym" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 1.png" id="1_0kr2a"]
 [ext_resource type="Texture2D" uid="uid://calcfm3j0hwgm" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 2.png" id="2_vdgav"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://lhbfehvopoy2" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Woods Objects Free.png" id="7_myk4g"]
 [ext_resource type="Texture2D" uid="uid://deu5spe1koyxs" path="res://assets/Woolly Lands/Woolly Lands FREE/House/House Grass Free 1.png" id="8_3symd"]
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="9_7bjwq"]
+[ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="10_hpman"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_osbi4"]
 resource_name = "Terreno"
@@ -355,3 +356,6 @@ tile_set = SubResource("TileSet_00skt")
 texture_filter = 1
 tile_map_data = PackedByteArray("AAAVAAcAAAAAAAgAAAA=")
 tile_set = SubResource("TileSet_jp8gw")
+
+[node name="player" parent="." instance=ExtResource("10_hpman")]
+position = Vector2(308, 207)
