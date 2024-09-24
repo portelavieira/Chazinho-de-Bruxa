@@ -9,7 +9,7 @@
 
 **2. Livro de Botânica**
 - [ ] Criar mecânica de aprendizado utilizando o livro de botânica.
-  - O livro será um "inventário com restrições", onde o jogador pode aprender apenas o que cabe no livro.
+- O livro será um "inventário com restrições", onde o jogador pode aprender apenas o que cabe no livro.
 
 **3. História para complementar o jogo**
 - [ ] Desenvolver uma narrativa que complementa o universo do jogo, dando profundidade ao enredo.
