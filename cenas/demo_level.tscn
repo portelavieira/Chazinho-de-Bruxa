@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c3vat1v3nor6b"]
+[gd_scene load_steps=27 format=4 uid="uid://c3vat1v3nor6b"]
 
 [ext_resource type="Texture2D" uid="uid://betcmuwxhw0ym" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 1.png" id="1_0kr2a"]
 [ext_resource type="Texture2D" uid="uid://calcfm3j0hwgm" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 2.png" id="2_vdgav"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://h0hy3rmmdwu5" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Fruits Objects Free.png" id="6_vjk6e"]
 [ext_resource type="Texture2D" uid="uid://lhbfehvopoy2" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Woods Objects Free.png" id="7_myk4g"]
 [ext_resource type="Texture2D" uid="uid://deu5spe1koyxs" path="res://assets/Woolly Lands/Woolly Lands FREE/House/House Grass Free 1.png" id="8_3symd"]
+[ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/pine.tscn" id="8_v0xrg"]
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="9_7bjwq"]
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="10_hpman"]
 
@@ -298,9 +299,14 @@ texture = ExtResource("7_myk4g")
 1:0/size_in_atlas = Vector2i(1, 2)
 1:0/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_xjfq8"]
+resource_name = "Coletaveis"
+scenes/1/scene = ExtResource("8_v0xrg")
+
 [sub_resource type="TileSet" id="TileSet_00skt"]
 sources/0 = SubResource("TileSetAtlasSource_rd6xt")
 sources/1 = SubResource("TileSetAtlasSource_js0ca")
+sources/2 = SubResource("TileSetScenesCollectionSource_xjfq8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bac6k"]
 resource_name = "casa"
@@ -349,7 +355,7 @@ tile_set = SubResource("TileSet_35e70")
 
 [node name="plantas_objetos" type="TileMapLayer" parent="."]
 texture_filter = 1
-tile_map_data = PackedByteArray("AAALAA8AAAABAAAAAAAdABQAAAABAAIAAAAeABUAAAABAAIAAAAfABQAAAABAAIAAAARABEAAAABAAQAAAATABIAAAABAAQAAAAUABEAAAABAAQAAAALABYAAAABAAYAAAAMABUAAAABAAYAAAARAAMAAAABAAEAAAAQAAIAAAABAAEAAAAaAAQAAAABAAEAAAAPAAwAAAABAAUAAAA=")
+tile_map_data = PackedByteArray("AAAPABIAAgAAAAAAAQAMABQAAgAAAAAAAQAZABAAAgAAAAAAAQALAA4AAgAAAAAAAQAOAAsAAgAAAAAAAQAUABQAAgAAAAAAAQAaAAYAAgAAAAAAAQAbAAkAAgAAAAAAAQAPAAYAAgAAAAAAAQA=")
 tile_set = SubResource("TileSet_00skt")
 
 [node name="casa" type="TileMapLayer" parent="."]

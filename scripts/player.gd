@@ -36,3 +36,8 @@ func _physics_process(delta: float) -> void:
 
 	# Move the character.
 	move_and_slide()
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	if area.has_method("collect"):
+		area.collect()
