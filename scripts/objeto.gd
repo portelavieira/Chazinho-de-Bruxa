@@ -30,6 +30,7 @@ func _input(event):
 		if is_near_target_rotation():
 			print("Você conseguiu!")
 			$"../Label3D".visible = true
+			set_process_input(false)
 			await get_tree().create_timer(2.5).timeout
 			_change_scene()
 			$"../Label3D".visible = false

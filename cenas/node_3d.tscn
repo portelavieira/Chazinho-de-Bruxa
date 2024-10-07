@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr7a23eigodu1"]
+[gd_scene load_steps=8 format=3 uid="uid://cr7a23eigodu1"]
 
-[ext_resource type="Script" path="res://scripts/node_3d.gd" id="1_1h0t2"]
 [ext_resource type="PackedScene" uid="uid://ccxjk2gvu1eoo" path="res://cenas/objeto.tscn" id="1_ucplt"]
 [ext_resource type="Script" path="res://scripts/objeto.gd" id="2_65e6x"]
 
@@ -24,7 +23,6 @@ size = Vector2(10, 10)
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_1h0t2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dju50")
