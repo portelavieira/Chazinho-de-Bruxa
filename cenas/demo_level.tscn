@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://c3vat1v3nor6b"]
+[gd_scene load_steps=51 format=4 uid="uid://c3vat1v3nor6b"]
 
 [ext_resource type="Texture2D" uid="uid://betcmuwxhw0ym" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 1.png" id="1_0kr2a"]
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_57fmx"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="9_7bjwq"]
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="10_hpman"]
 [ext_resource type="Texture2D" uid="uid://beqthn2q4o5qi" path="res://assets/temporarios/Magic Spell Effects All/15.png" id="12_wytd5"]
-[ext_resource type="AudioStream" uid="uid://c3ht6ugde6466" path="res://assets/soundtrack/soft-bell-melody-darling_120bpm_C_minor.wav" id="14_a8q3o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7jrb"]
 resource_name = "Terreno"
@@ -562,9 +561,5 @@ shape = SubResource("RectangleShape2D_jngkv")
 sprite_frames = SubResource("SpriteFrames_cytsq")
 autoplay = "default"
 frame_progress = 0.736362
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_a8q3o")
-autoplay = true
 
 [connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]
