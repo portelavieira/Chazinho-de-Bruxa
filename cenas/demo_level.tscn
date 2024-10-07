@@ -548,7 +548,7 @@ tile_map_data = PackedByteArray("AAARAA8AAAAAAAgAAAA=")
 tile_set = SubResource("TileSet_jp8gw")
 
 [node name="player" parent="." instance=ExtResource("10_hpman")]
-position = Vector2(281, 315)
+position = Vector2(283, 321)
 
 [node name="portal" type="Area2D" parent="."]
 position = Vector2(281, 105)

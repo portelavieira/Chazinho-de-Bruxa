@@ -29,8 +29,10 @@ func _input(event):
 
 		if is_near_target_rotation():
 			print("Você conseguiu!")
+			$"../Label3D".visible = true
+			await get_tree().create_timer(2.5).timeout
 			_change_scene()
-			
+			$"../Label3D".visible = false
 
 func is_near_target_rotation() -> bool:
 	var current_rotation = rotation_degrees
