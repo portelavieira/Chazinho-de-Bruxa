@@ -1,7 +1,5 @@
 extends Node2D
 
-var forest = preload("res://cenas/forest.tscn").instantiate()
-
 func _on_portal_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		_change_scene()
