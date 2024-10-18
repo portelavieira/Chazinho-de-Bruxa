@@ -26,5 +26,5 @@
 **6. Modelo 3D de plantas**
 - [ ] Achar/Criar o modelo 3D das plantas que o jogador poderá coletar no puzzle de sombras, entre 4 ou 5.
 
-**7. Objetivos do Jogo**
-- [ ] Definir claramente os objetivos do jogo para que os jogadores saibam o que alcançar durante o gameplay.
+**7. Minigame de Musica**
+- [ ] Um mini-game de ritmo voltado para pontaria que ocorrerá para resolver puzzles durante a exploração.
