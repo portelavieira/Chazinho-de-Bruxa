@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvussdrp6tjsu"
-path="res://.godot/imported/walk.png-98ab66c648474d49c2fa066e6470c4e7.ctex"
+uid="uid://33qw86lcj0e3"
+path="res://.godot/imported/nimue-walk-back_no-sole.png-9daef7205db6d60628131d5f6af24031.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Base Character - Free/walk.png"
-dest_files=["res://.godot/imported/walk.png-98ab66c648474d49c2fa066e6470c4e7.ctex"]
+source_file="res://assets/nimue/No-Sole/nimue-walk-back_no-sole.png"
+dest_files=["res://.godot/imported/nimue-walk-back_no-sole.png-9daef7205db6d60628131d5f6af24031.ctex"]
 
 [params]
 

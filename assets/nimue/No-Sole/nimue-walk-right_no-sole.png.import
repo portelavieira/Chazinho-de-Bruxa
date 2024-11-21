@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0knjhs26qr60"
-path="res://.godot/imported/death.png-37d3a9641e5a50aaf3c97f6023477e7e.ctex"
+uid="uid://cyj21c8lo02ho"
+path="res://.godot/imported/nimue-walk-right_no-sole.png-cd0554651ce86f1734a2cfe3d552dfa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Base Character - Free/death.png"
-dest_files=["res://.godot/imported/death.png-37d3a9641e5a50aaf3c97f6023477e7e.ctex"]
+source_file="res://assets/nimue/No-Sole/nimue-walk-right_no-sole.png"
+dest_files=["res://.godot/imported/nimue-walk-right_no-sole.png-cd0554651ce86f1734a2cfe3d552dfa4.ctex"]
 
 [params]
 

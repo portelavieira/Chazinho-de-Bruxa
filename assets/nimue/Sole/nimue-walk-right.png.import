@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bynlm5bkorujp"
-path="res://.godot/imported/damage.png-209a67f2a352674d07157975c0bab0d3.ctex"
+uid="uid://bghoaj8mly7kg"
+path="res://.godot/imported/nimue-walk-right.png-41517a1558ef43e034772271922a13e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Base Character - Free/damage.png"
-dest_files=["res://.godot/imported/damage.png-209a67f2a352674d07157975c0bab0d3.ctex"]
+source_file="res://assets/nimue/Sole/nimue-walk-right.png"
+dest_files=["res://.godot/imported/nimue-walk-right.png-41517a1558ef43e034772271922a13e5.ctex"]
 
 [params]
 
