@@ -1,0 +1,46 @@
+[gd_resource type="ArrayMesh" load_steps=5 format=4 uid="uid://cuvwqjtf3bknh"]
+
+[ext_resource type="Texture2D" uid="uid://hp82oq6aeao1" path="res://assets/plants/chamomile_rightleaf_Image_2.png" id="1_f4cpq"]
+[ext_resource type="Texture2D" uid="uid://dr5wj6vse1w8" path="res://assets/plants/chamomile_rightleaf_Image_3.png" id="2_dsjml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u2knk"]
+resource_name = "camomile_MI"
+cull_mode = 2
+albedo_texture = ExtResource("1_f4cpq")
+roughness = 0.957705
+normal_enabled = true
+normal_texture = ExtResource("2_dsjml")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tnfuc"]
+_surfaces = [{
+"aabb": AABB(-1.30956, -1.25485, -2.63868, 2.81945, 2.3565, 5.06993),
+"format": 34899750913,
+"index_count": 48,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAACAAAABAAAAAMABAAFAAIABgAEAAMABwAEAAYABQAEAAcABwAGAAgABwAIAAkABwAJAAoABwAKAAsABwALAAwABQAHAA0ABQANAAwADQAHAAwA"),
+"lods": [0.309837, PackedByteArray("AwACAAEABgACAAMACwACAAYABQACAAsABQALAAwACwAGAAgACwAIAAkACwAJAAoA")],
+"name": "camomile_MI",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("osgj2bjXAAD///////8AAH+aHPVK4wAA2eyfhvjcAABKjFOp3JsAAOpA+N7JqwAAiMQNNZmpAAAJWjOIcWUAAFOdjQTMdQAArmcAAN47AABgLNU0XwgAANgbFEgAAAAAAADisntNAABXDmbLWXUAAA==")
+}]
+blend_shape_mode = 0
+
+[resource]
+resource_name = "chamomile_rightleaf_Chamomile_Bush3_camomile_MI_0"
+_surfaces = [{
+"aabb": AABB(-1.30956, -1.25485, -2.63868, 2.81945, 2.3565, 5.06993),
+"attribute_data": PackedByteArray("5tcW6y+XAAAAwE4/AHDJPwBgYz4Aa3g/AOAVQQAAJMEAwBW/AACAPwDgXz4AgN0+6dn//yUwAAAAADs/AGDKPwBgYz4AM3g/AGD+QABAQsEAwBG/AACAPwAAZT4AYAQ/wMfY6uSXAAAAwE4/AHDJPwAAYj4Abng/AIAVQQAAE8EAwBW/AACAPwDANj4AAN0+A+/g6Y+bAAAAwE4/AGDKPwBAZT4AbXg/AAAWQQBAWMEAwBG/AACAPwBgjT4AANs+aNeuzprYAAAAQF8/AHDJPwCAYz4Av3g/AAAsQQAAFMEAwBW/AACAPwCgXj4AwKI+hr79zLvaAAAAQF8/AHDJPwCAYT4Ax3g/AKArQQAgEsEAwBW/AACAPwBAHz4AQJ8+EPcyzm7ZAAAAQF8/AGDKPwAgZj4Avng/AIAsQQBAWsEAwBG/AACAPwCglz4AwKE+MtWKtRrzAAAAQGY/AHDJPwCAYz4AE3k/AEA3QQAAFMEAwBW/AACAPwAAWT4AgF0+If42tEj0AAAAQGY/AGDKPwDgZj4AFHk/AMA3QQBAS8EAwBG/AACAPwCgoD4AAFg+//9HnFf+AAAAQGY/AGDKPwBAZz4AcHk/AMA3QQBATMEAwBG/AACAPwAAoz4AAOo9De0sjf//AAAAAGg/AGDKPwDAZT4AuHk/AAA8QQCAZsEAwBG/AACAPwDgij4AAFo928wmiv//AAAAAGg/AHDJPwAgYz4AzXk/AMA7QQBAIcEAwBW/AACAPwDAQz4AACg9LrI8oQn9AAAAQGY/AHDJPwDAYD4AZnk/AOA2QQBAM8EAwBW/AACAPwCg/z0AgAk+Kbeksv70AAAAQGY/AHDJPwAgYT4AInk/AOA2QQBAEMEAwBW/AACAPwCADD4AgFE+"),
+"format": 34899751415,
+"index_count": 48,
+"index_data": PackedByteArray("AAACAAEAAwAAAAEABAACAAAABAAAAAMABAAFAAIABgAEAAMABwAEAAYABQAEAAcABwAGAAgABwAIAAkABwAJAAoABwAKAAsABwALAAwABQAHAA0ABQANAAwADQAHAAwA"),
+"lods": [0.309837, PackedByteArray("AwACAAEABgACAAMACwACAAYABQACAAsABQALAAwACwAGAAgACwAIAAkACwAJAAoA")],
+"material": SubResource("StandardMaterial3D_u2knk"),
+"name": "camomile_MI",
+"primitive": 3,
+"uv_scale": Vector4(0.636719, 1.03418, 8.45313, 14.1563),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("osgj2bjX407////////9S3+aHPVK4wBN2eyfhvjcZUpKjFOp3JukTOpA+N7Jq2dIiMQNNZmp6kkJWjOIcWWoSlOdjQTMdQdLrmcAAN47T0tgLNU0XwhFQtgbFEgAAMBHAADisntNCkNXDmbLWXWcFqYvnHlBWRSicDXSeCZWqaSrKaKBRjaxgX9SPqYaLXiFIlASpqpQLqgJV0qq0jSwiX5D54lzXTpn")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tnfuc")

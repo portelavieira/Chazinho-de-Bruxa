@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://27l0jvc64vp7"]
+
+[ext_resource type="PackedScene" uid="uid://s7rdat4a7s16" path="res://assets/plants/chamomile_petals.glb" id="1_58j4p"]
+[ext_resource type="ArrayMesh" uid="uid://bxpq0lmqdsbxk" path="res://assets/meshs/petals_mesh.tres" id="2_codso"]
+
+[node name="chamomile_petals" instance=ExtResource("1_58j4p")]
+
+[node name="Chamomile_Bush3_camomile_MI_0" parent="RootNode/Chamomile_Bush3" index="0"]
+mesh = ExtResource("2_codso")

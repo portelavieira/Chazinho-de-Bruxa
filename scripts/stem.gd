@@ -3,8 +3,8 @@ extends RigidBody3D
 var rotating = false
 var prev_mouse_position
 
-var target_rotation = Vector2(0.338, 1.41)
-var tolerance = 0.2
+var target_rotation = Vector2(30, 40)
+var tolerance = 10
 
 func _input(event):
 	if event is InputEventMouseButton:

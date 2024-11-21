@@ -1,7 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cr7a23eigodu1"]
+[gd_scene load_steps=17 format=3 uid="uid://cr7a23eigodu1"]
 
-[ext_resource type="PackedScene" uid="uid://ccxjk2gvu1eoo" path="res://cenas/objeto.tscn" id="1_ucplt"]
+[ext_resource type="PackedScene" uid="uid://c5u8bn7wakea6" path="res://cenas/objeto.tscn" id="1_ucplt"]
 [ext_resource type="Script" path="res://scripts/objeto.gd" id="2_65e6x"]
+[ext_resource type="PackedScene" uid="uid://dw18ve3ud7xq1" path="res://cenas/leftleaf.tscn" id="3_nc6dq"]
+[ext_resource type="PackedScene" uid="uid://csfje8abfa5qk" path="res://cenas/middleleaf.tscn" id="4_lvlw8"]
+[ext_resource type="Script" path="res://scripts/stem.gd" id="4_vg60r"]
+[ext_resource type="PackedScene" uid="uid://ciulxooro1xd1" path="res://cenas/rightleaf.tscn" id="5_gssxr"]
+[ext_resource type="PackedScene" uid="uid://b5ukej86fa2x5" path="res://cenas/stem.tscn" id="6_gwhrf"]
+[ext_resource type="Script" path="res://scripts/leftleaf.gd" id="6_x0d7c"]
+[ext_resource type="Script" path="res://scripts/middleleaf.gd" id="8_ddvoa"]
+[ext_resource type="Script" path="res://scripts/rightleaf.gd" id="10_dkxx6"]
+
+[sub_resource type="GDScript" id="GDScript_2xfny"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5tls"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,6 +33,7 @@ size = Vector2(10, 10)
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
+script = SubResource("GDScript_2xfny")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dju50")
@@ -36,16 +47,40 @@ mesh = SubResource("PlaneMesh_36haa")
 shape = SubResource("ConcavePolygonShape3D_xt0m2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.4, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.53512, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.173648, -0.754407, 0.633022, 0, 0.642788, 0.766044, -0.984808, -0.133022, 0.111619, 3.27916, 4.72101, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 50.0
 
-[node name="Objeto" parent="." instance=ExtResource("1_ucplt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.4, 0)
+[node name="Petals" parent="." instance=ExtResource("1_ucplt")]
+transform = Transform3D(0.598883, -0.516543, 0.611983, -0.540637, 0.302987, 0.7848, -0.590806, -0.800864, -0.0978087, 0.337636, 1.40984, -0.0785263)
 script = ExtResource("2_65e6x")
+
+[node name="Stem" parent="." instance=ExtResource("6_gwhrf")]
+transform = Transform3D(0.996839, 0.0705011, -0.0366359, 0.0723701, -0.615395, 0.784889, 0.03279, -0.785059, -0.618552, 0.261749, 1.15772, 0.196851)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_vg60r")
+
+[node name="LeftLeaf" parent="." instance=ExtResource("3_nc6dq")]
+transform = Transform3D(0.386166, 0.554994, 0.736789, 0.493638, -0.799086, 0.343194, 0.779228, 0.231176, -0.582547, 0.210888, 0.875478, 0.0212137)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("6_x0d7c")
+
+[node name="MiddleLeaf" parent="." instance=ExtResource("4_lvlw8")]
+transform = Transform3D(0.985926, -0.00756638, 0.16701, 0.00449007, 0.999813, 0.0187898, -0.167122, -0.0177754, 0.985776, 0.0202638, 0.680386, 0.220622)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("8_ddvoa")
+
+[node name="RightLeaf" parent="." instance=ExtResource("5_gssxr")]
+transform = Transform3D(0.531706, 0.133293, 0.836374, 0.052768, 0.980405, -0.189794, -0.845283, 0.145048, 0.514254, -0.375107, 0.528982, 0.229854)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("10_dkxx6")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00588168, 0.999983, 0, -0.999983, -0.00588168, 0, 0.141388, -1.25363)
