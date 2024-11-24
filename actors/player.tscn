@@ -269,10 +269,10 @@ shape = SubResource("RectangleShape2D_q6kcc")
 
 [node name="camera" type="Camera2D" parent="."]
 zoom = Vector2(3.5, 3.5)
-limit_left = 0
-limit_top = 0
-limit_right = 579
-limit_bottom = 380
+limit_left = -2000
+limit_top = -1120
+limit_right = 2000
+limit_bottom = 1120
 editor_draw_limits = true
 
 [node name="hurtbox" type="Area2D" parent="."]
