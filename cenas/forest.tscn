@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://v70ouur5tjwt" path="res://assets/Woolly Lands/Woolly Lands FREE/Trees/Trees sprites/Trees Free 2.png" id="5_gjxn7"]
 [ext_resource type="Texture2D" uid="uid://h0hy3rmmdwu5" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Fruits Objects Free.png" id="6_mkpw1"]
 [ext_resource type="Texture2D" uid="uid://lhbfehvopoy2" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Woods Objects Free.png" id="7_tshfh"]
-[ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/pine.tscn" id="8_y0eoy"]
+[ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/chamomile_coletavel.tscn" id="8_y0eoy"]
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="9_rdh7n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0kbq"]

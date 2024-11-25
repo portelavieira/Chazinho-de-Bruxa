@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://c3vat1v3nor6b"]
+[gd_scene load_steps=30 format=4 uid="uid://c3vat1v3nor6b"]
 
 [ext_resource type="Texture2D" uid="uid://betcmuwxhw0ym" path="res://assets/Woolly Lands/Woolly Lands FREE/Tilesets/Set Free 1.png" id="1_0kr2a"]
 [ext_resource type="Script" path="res://scripts/demo_level.gd" id="1_57fmx"]
@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://h0hy3rmmdwu5" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Fruits Objects Free.png" id="6_vjk6e"]
 [ext_resource type="Texture2D" uid="uid://lhbfehvopoy2" path="res://assets/Woolly Lands/Woolly Lands FREE/Objects/Woods Objects Free.png" id="7_myk4g"]
 [ext_resource type="Texture2D" uid="uid://deu5spe1koyxs" path="res://assets/Woolly Lands/Woolly Lands FREE/House/House Grass Free 1.png" id="8_3symd"]
-[ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/pine.tscn" id="8_v0xrg"]
+[ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/chamomile_coletavel.tscn" id="8_v0xrg"]
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="9_7bjwq"]
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="10_hpman"]
-[ext_resource type="Texture2D" uid="uid://beqthn2q4o5qi" path="res://assets/temporarios/Magic Spell Effects All/15.png" id="12_wytd5"]
+[ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="13_2cxfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h7jrb"]
 resource_name = "Terreno"
@@ -378,150 +378,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_bac6k")
 sources/1 = SubResource("TileSetAtlasSource_xnvcj")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jngkv"]
-size = Vector2(63, 63)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lhkvb"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yy1x0"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yoqa"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vj3h"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_34vyy"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nqrt"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_38r0f"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nqojn"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d52cs"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(512, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rdgyx"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(576, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nu8db"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(640, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rt5b5"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(704, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahdsq"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(768, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvhwu"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(832, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wx6ha"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(896, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1luc"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(960, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6trla"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(1024, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xnhq8"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(1088, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_msli1"]
-atlas = ExtResource("12_wytd5")
-region = Rect2(1152, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cytsq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lhkvb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yy1x0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8yoqa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8vj3h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_34vyy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nqrt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_38r0f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nqojn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d52cs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rdgyx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nu8db")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rt5b5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ahdsq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uvhwu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wx6ha")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1luc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6trla")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xnhq8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_msli1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 25.0
-}]
-
 [node name="demo_level" type="Node2D"]
 script = ExtResource("1_57fmx")
 
@@ -550,16 +406,4 @@ tile_set = SubResource("TileSet_jp8gw")
 [node name="player" parent="." instance=ExtResource("10_hpman")]
 position = Vector2(283, 321)
 
-[node name="portal" type="Area2D" parent="."]
-position = Vector2(281, 105)
-
-[node name="colisão" type="CollisionShape2D" parent="portal"]
-position = Vector2(0.5, -0.5)
-shape = SubResource("RectangleShape2D_jngkv")
-
-[node name="sprite" type="AnimatedSprite2D" parent="portal"]
-sprite_frames = SubResource("SpriteFrames_cytsq")
-autoplay = "default"
-frame_progress = 0.736362
-
-[connection signal="body_entered" from="portal" to="." method="_on_portal_body_entered"]
+[node name="portal" parent="." instance=ExtResource("13_2cxfs")]

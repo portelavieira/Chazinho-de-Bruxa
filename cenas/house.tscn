@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://ssh5636n36ii"]
+[gd_scene load_steps=35 format=4 uid="uid://ssh5636n36ii"]
 
 [ext_resource type="Texture2D" uid="uid://dvyw87i6por7i" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_sy5dv"]
 [ext_resource type="Texture2D" uid="uid://b7nhpbxnewyla" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_ajon0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="7_jbnf5"]
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="8_q026c"]
 [ext_resource type="Texture2D" uid="uid://b74tx40hnmiuu" path="res://assets/magic-Sheet.png" id="9_wwual"]
+[ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="10_60rhh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dp0wo"]
 texture = ExtResource("1_sy5dv")
@@ -824,7 +825,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="house" type="Node2D"]
 
 [node name="TileMapLayer4" type="TileMapLayer" parent="."]
 position = Vector2(132, 51)
@@ -851,19 +852,7 @@ tile_map_data = PackedByteArray("AADs//n/BAACAAYAAADt//n/BAADAAYAAADu//n/BAADAAY
 tile_set = SubResource("TileSet_8vjam")
 
 [node name="player" parent="." instance=ExtResource("7_jbnf5")]
-position = Vector2(36, 7)
-
-[node name="magic" type="AnimatedSprite2D" parent="."]
-position = Vector2(85, 64)
-sprite_frames = SubResource("SpriteFrames_ymnl2")
-animation = &"magic"
-
-[node name="door" type="AnimatedSprite2D" parent="magic"]
-position = Vector2(1, -1)
-sprite_frames = SubResource("SpriteFrames_ymnl2")
-animation = &"door"
-frame = 6
-frame_progress = 0.334591
+position = Vector2(85, 91)
 
 [node name="door" type="AnimatedSprite2D" parent="."]
 position = Vector2(49, -52)
@@ -871,3 +860,6 @@ sprite_frames = SubResource("SpriteFrames_ymnl2")
 animation = &"door"
 frame = 7
 frame_progress = 1.0
+
+[node name="portal" parent="." instance=ExtResource("10_60rhh")]
+position = Vector2(86, 63)

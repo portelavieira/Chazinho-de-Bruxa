@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbu47rtvgu744"]
+
+[ext_resource type="PackedScene" uid="uid://brhv50lj15wkj" path="res://actors/coletaveis.tscn" id="1_yvyv8"]
+[ext_resource type="Texture2D" uid="uid://bdvbfcr062som" path="res://assets/Props/chamomille.png" id="2_oli21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpwt"]
+resource_local_to_scene = true
+size = Vector2(17.75, 15)
+
+[node name="chamomile_coletavel" instance=ExtResource("1_yvyv8")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_oli21")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.875, -1.5)
+shape = SubResource("RectangleShape2D_bhpwt")
