@@ -251,10 +251,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6kcc"]
-size = Vector2(13, 14)
+size = Vector2(13, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v32ly"]
-size = Vector2(13, 14)
+size = Vector2(13, 10)
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_vegs4")
@@ -265,7 +265,7 @@ sprite_frames = SubResource("SpriteFrames_qkq5o")
 animation = &"idle-up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_q6kcc")
 
 [node name="Book_view" parent="." instance=ExtResource("10_34u4x")]
@@ -283,7 +283,7 @@ editor_draw_limits = true
 [node name="hitbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0.5, 0)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_v32ly")
 
 [connection signal="area_entered" from="hitbox" to="." method="_on_hurtbox_area_entered"]

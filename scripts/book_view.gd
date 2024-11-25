@@ -12,6 +12,7 @@ var open = false
 var index = 0
 
 func _ready() -> void:
+	visible = false
 	flowers = [
 		chamomile, chamomile
 	]
@@ -20,8 +21,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("show_book"):
 		if not open:
 			appear()
+			$"..".SPEED=0
 		else:
 			_on_fechar_pressed()
+			$"..".SPEED=100
 
 func resize_flower():
 	var panel_size = $Panel.get_size()  # Obtém tamanho do painel
@@ -40,6 +43,7 @@ func appear():
 	if not open:
 		open = true
 		closing = false
+		visible = true
 		$Sprites.play("open")
 		$anim_main.play("appear_book")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c5etidkou3ppa"]
+[gd_scene load_steps=27 format=4 uid="uid://c5etidkou3ppa"]
 
 [ext_resource type="Texture2D" uid="uid://ecp5kx6t4k1a" path="res://assets/Tileset/Dirt - simplified.png" id="1_82uvc"]
 [ext_resource type="Texture2D" uid="uid://quwi45bft6pi" path="res://assets/Tileset/Fall - simplified.png" id="2_56r34"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://chamyvvh552q6" path="res://assets/Props/Texture.png" id="8_cadxv"]
 [ext_resource type="PackedScene" uid="uid://ch4pusdtsj005" path="res://actors/player.tscn" id="9_byupi"]
 [ext_resource type="PackedScene" uid="uid://dbu47rtvgu744" path="res://actors/chamomile_coletavel.tscn" id="11_rnpnm"]
+[ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/pause_menu.tscn" id="13_qo88i"]
 [ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="14_0t0nc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt7om"]
@@ -348,5 +349,9 @@ collision_visibility_mode = 1
 [node name="player" parent="." instance=ExtResource("9_byupi")]
 position = Vector2(0, 36)
 
+[node name="PauseMenu" parent="player" instance=ExtResource("13_qo88i")]
+visible = false
+z_index = 6
+
 [node name="portal" parent="." instance=ExtResource("14_0t0nc")]
-position = Vector2(0, -7)
+position = Vector2(0, -30)

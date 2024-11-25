@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cr7a23eigodu1"]
+[gd_scene load_steps=13 format=3 uid="uid://cr7a23eigodu1"]
 
 [ext_resource type="PackedScene" uid="uid://c5u8bn7wakea6" path="res://cenas/objeto.tscn" id="1_ucplt"]
 [ext_resource type="PackedScene" uid="uid://dw18ve3ud7xq1" path="res://cenas/leftleaf.tscn" id="3_nc6dq"]
 [ext_resource type="PackedScene" uid="uid://csfje8abfa5qk" path="res://cenas/middleleaf.tscn" id="4_lvlw8"]
 [ext_resource type="PackedScene" uid="uid://ciulxooro1xd1" path="res://cenas/rightleaf.tscn" id="5_gssxr"]
 [ext_resource type="PackedScene" uid="uid://b5ukej86fa2x5" path="res://cenas/stem.tscn" id="6_gwhrf"]
+[ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/pause_menu.tscn" id="6_ubdws"]
 
 [sub_resource type="GDScript" id="GDScript_2xfny"]
 script/source = "extends Node3D
@@ -157,3 +158,6 @@ text = "Você Venceu!"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_ubdws")]
+visible = false
