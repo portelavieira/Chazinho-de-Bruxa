@@ -21,6 +21,7 @@ BackgroundMusic="*res://cenas/music.tscn"
 Flowers="*res://scripts/flowers.gd"
 Objective="*res://scripts/objective_hud.gd"
 ObjectiveHud="*res://GUI/objective_hud.tscn"
+Global="*res://scripts/global.gd"
 
 [input]
 
