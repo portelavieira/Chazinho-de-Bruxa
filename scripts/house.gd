@@ -132,3 +132,4 @@ func _on_dialogue_completed():
 	_dialogue_completed = true
 	# Atualiza o texto da label no HUD global
 	$player/objective_hud/mission_text.show()
+	$vizinha.hide()

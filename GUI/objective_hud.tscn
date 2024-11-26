@@ -16,4 +16,5 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("2_wc0xq")
-text = "Objetivo: Vá à floresta conseguir Camomila para sua nova vizinha"
+theme_override_font_sizes/font_size = 8
+text = "Objetivo: Vá à floresta conseguir uma flor acalmante"
