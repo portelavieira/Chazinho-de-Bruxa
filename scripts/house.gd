@@ -7,6 +7,9 @@ class_name Level
 
 const _DIALOG_SCREEN: PackedScene = preload("res://cenas/dialogue_screen.tscn")
 
+var _player_in_area: bool = false
+var _dialogue_completed: bool = false
+
 var _dialog_data: Dictionary = {
 	0: {
 		"faceset": "res://icon.svg",
@@ -105,6 +108,27 @@ func restart_scene():
 	_hud.add_child(_current_dialogue)
 	_current_dialogue.reset_dialogue()
 
+	_current_dialogue.connect("tree_exited", Callable(self, "_on_dialogue_completed"))
+
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("dialog"):
+	if Input.is_action_just_pressed("dialog") and _player_in_area and not _dialogue_completed:
+		$vizinha/Label.hide()
 		restart_scene()
+
+func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
+	print("Entrou: ", body.name)
+	if body.name == "player":
+		_player_in_area = true
+		if _dialogue_completed:
+			$vizinha/Label.hide()
+		else:
+			$vizinha/Label.show()
+
+func _on_dialogue_trigger_body_exited(body: Node2D) -> void:
+	if body.name == "player":
+		$vizinha/Label.hide()
+
+func _on_dialogue_completed():
+	_dialogue_completed = true
+	# Atualiza o texto da label no HUD global
+	$player/objective_hud/mission_text.show()

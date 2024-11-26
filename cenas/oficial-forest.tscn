@@ -350,7 +350,6 @@ collision_visibility_mode = 1
 position = Vector2(0, 36)
 
 [node name="PauseMenu" parent="player" instance=ExtResource("13_qo88i")]
-visible = false
 z_index = 6
 
 [node name="portal" parent="." instance=ExtResource("14_0t0nc")]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://tktuevficw7e"]
+
+[ext_resource type="Script" path="res://scripts/objective_hud.gd" id="1_pjw28"]
+[ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="2_wc0xq"]
+
+[node name="objective_hud" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pjw28")
+
+[node name="mission_text" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_wc0xq")
+text = "Objetivo: Vá à floresta conseguir Camomila para sua nova vizinha"

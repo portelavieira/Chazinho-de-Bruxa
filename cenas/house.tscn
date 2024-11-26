@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://ssh5636n36ii"]
+[gd_scene load_steps=50 format=4 uid="uid://ssh5636n36ii"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4hju1"]
 [ext_resource type="Texture2D" uid="uid://dvyw87i6por7i" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_sy5dv"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://b74tx40hnmiuu" path="res://assets/magic-Sheet.png" id="9_wwual"]
 [ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="10_60rhh"]
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/pause_menu.tscn" id="13_6ahif"]
+[ext_resource type="Texture2D" uid="uid://cr67dmsdw3wu" path="res://assets/vizinhos/No-Sole/npc1-idle-front_no-sole.png" id="14_232yt"]
+[ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="15_ko8v4"]
+[ext_resource type="PackedScene" uid="uid://tktuevficw7e" path="res://GUI/objective_hud.tscn" id="16_c1kys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hbcu"]
 texture = ExtResource("1_ym78l")
@@ -835,6 +838,48 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkubq"]
+atlas = ExtResource("14_232yt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5vnv"]
+atlas = ExtResource("14_232yt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpeyr"]
+atlas = ExtResource("14_232yt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v7u0"]
+atlas = ExtResource("14_232yt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ngeyg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pkubq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5vnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpeyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v7u0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfiyb"]
+size = Vector2(10, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tihw0"]
+radius = 14.0
+
 [node name="house" type="Node2D" node_paths=PackedStringArray("_hud")]
 script = ExtResource("1_4hju1")
 _hud = NodePath("HUD")
@@ -879,6 +924,7 @@ frame_progress = 1.0
 position = Vector2(86, 63)
 
 [node name="player" parent="." instance=ExtResource("7_jbnf5")]
+z_index = 0
 position = Vector2(85, 91)
 
 [node name="PauseMenu" parent="player" instance=ExtResource("13_6ahif")]
@@ -889,4 +935,42 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 
+[node name="objective_hud" parent="player" instance=ExtResource("16_c1kys")]
+offset_left = -85.0
+offset_top = -91.0
+offset_right = -45.0
+offset_bottom = -51.0
+
 [node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="vizinha" type="CharacterBody2D" parent="."]
+z_index = 1
+position = Vector2(33, -27)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="vizinha"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_ngeyg")
+frame_progress = 0.0900197
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vizinha"]
+shape = SubResource("RectangleShape2D_lfiyb")
+
+[node name="dialogue_trigger" type="Area2D" parent="vizinha"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vizinha/dialogue_trigger"]
+shape = SubResource("CircleShape2D_tihw0")
+
+[node name="Label" type="Label" parent="vizinha"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+offset_left = -65.0
+offset_top = -22.0
+offset_right = 75.0
+offset_bottom = -12.0
+theme_override_fonts/font = ExtResource("15_ko8v4")
+theme_override_font_sizes/font_size = 9
+text = "Pressione A para interagir"
+
+[connection signal="body_entered" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_entered"]
+[connection signal="body_exited" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_exited"]

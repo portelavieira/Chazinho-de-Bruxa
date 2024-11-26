@@ -257,6 +257,7 @@ size = Vector2(13, 10)
 size = Vector2(13, 10)
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_vegs4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -270,6 +271,7 @@ shape = SubResource("RectangleShape2D_q6kcc")
 
 [node name="Book_view" parent="." instance=ExtResource("10_34u4x")]
 top_level = false
+z_index = 5
 scale = Vector2(0.25, 0.25)
 
 [node name="camera" type="Camera2D" parent="."]

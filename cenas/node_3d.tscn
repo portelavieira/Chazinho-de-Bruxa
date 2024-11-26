@@ -25,7 +25,7 @@ var target_transforms = {
 }
 
 var tolerance_position = 0.05  # Tolerância para posição
-var tolerance_rotation = 25.0   # Tolerância para rotação (graus)
+var tolerance_rotation = 30.0   # Tolerância para rotação (graus)
 
 func _ready():
 	# Adiciona as peças na lista
@@ -160,4 +160,9 @@ text = "Você Venceu!"
 wait_time = 2.5
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_ubdws")]
-visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(1.7, 1.7)
