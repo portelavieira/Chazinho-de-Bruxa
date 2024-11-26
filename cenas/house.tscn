@@ -1,5 +1,6 @@
-[gd_scene load_steps=39 format=4 uid="uid://ssh5636n36ii"]
+[gd_scene load_steps=40 format=4 uid="uid://ssh5636n36ii"]
 
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_4hju1"]
 [ext_resource type="Texture2D" uid="uid://dvyw87i6por7i" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_sy5dv"]
 [ext_resource type="Texture2D" uid="uid://dtdx21lyhk4o4" path="res://assets/Tileset/Black_bg.png" id="1_ym78l"]
 [ext_resource type="Texture2D" uid="uid://b7nhpbxnewyla" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_ajon0"]
@@ -834,7 +835,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="house" type="Node2D"]
+[node name="house" type="Node2D" node_paths=PackedStringArray("_hud")]
+script = ExtResource("1_4hju1")
+_hud = NodePath("HUD")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="."]
 position = Vector2(300, 221)
@@ -879,10 +882,11 @@ position = Vector2(86, 63)
 position = Vector2(85, 91)
 
 [node name="PauseMenu" parent="player" instance=ExtResource("13_6ahif")]
-visible = false
 z_index = 6
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+
+[node name="HUD" type="CanvasLayer" parent="."]

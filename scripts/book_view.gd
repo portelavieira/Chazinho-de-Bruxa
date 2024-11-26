@@ -17,7 +17,7 @@ func _ready() -> void:
 		chamomile, chamomile
 	]
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("show_book"):
 		if not open:
 			appear()

@@ -19,10 +19,10 @@ func _change_scene() -> void:
 		"house":
 			get_tree().change_scene_to_file("res://cenas/oficial-forest.tscn")
 
-func _on_animation_area_area_entered(area: Area2D) -> void:
+func _on_animation_area_area_entered(_area: Area2D) -> void:
 	$magic/door.play("door_open")
 
-func _on_animation_area_area_exited(area: Area2D) -> void:
+func _on_animation_area_area_exited(_area: Area2D) -> void:
 	$magic/door.play("door_closes")
 
 func _on_area_entered(body: Node) -> void:

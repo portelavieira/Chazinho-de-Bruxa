@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cc4s2cinlgkpq" path="res://icon.svg" id="1_r1gpo"]
 [ext_resource type="Script" path="res://scripts/dialogue_screen.gd" id="1_sef3l"]
 
-[node name="DialogueScreen" type="Control"]
+[node name="DialogueScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
 custom_minimum_size = Vector2(320, 80)
 layout_mode = 3
 anchors_preset = 7
@@ -12,26 +12,32 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = -100.0
+offset_top = -80.0
 offset_right = 160.0
-offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 script = ExtResource("1_sef3l")
+_name = NodePath("Background/HContainer/VContainer/Name")
+_dialog = NodePath("Background/HContainer/VContainer/Dialog")
+_faceset = NodePath("Background/HContainer/Border/Faceset")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = -0.44375
+anchor_top = -0.9375
+anchor_right = 1.43125
 anchor_bottom = 1.0
+offset_top = -30.0
+offset_bottom = -30.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 color = Color(0, 0, 0, 0.6)
 
 [node name="HContainer" type="HBoxContainer" parent="Background"]
-custom_minimum_size = Vector2(312, 72)
+custom_minimum_size = Vector2(590, 145)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Border" type="ColorRect" parent="Background/HContainer"]
-custom_minimum_size = Vector2(72, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 
 [node name="Faceset" type="TextureRect" parent="Background/HContainer/Border"]
@@ -57,10 +63,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -35.0
-offset_top = -36.0
-offset_right = 35.0
-offset_bottom = 36.0
+offset_left = -77.5
+offset_top = -70.0
+offset_right = 77.5
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_r1gpo")
@@ -76,6 +82,6 @@ layout_mode = 2
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Dialogue" type="RichTextLabel" parent="Background/HContainer/VContainer"]
+[node name="Dialog" type="RichTextLabel" parent="Background/HContainer/VContainer"]
 layout_mode = 2
 size_flags_vertical = 3

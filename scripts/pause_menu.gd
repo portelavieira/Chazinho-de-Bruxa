@@ -3,7 +3,7 @@ extends Control
 var _is_paused:bool = false:
 	set = set_paused
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		_is_paused = !_is_paused
 
