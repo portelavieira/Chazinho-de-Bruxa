@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://rih3142d2t4p"]
+[gd_scene load_steps=5 format=3 uid="uid://rih3142d2t4p"]
 
 [ext_resource type="Texture2D" uid="uid://cc4s2cinlgkpq" path="res://icon.svg" id="1_r1gpo"]
 [ext_resource type="Script" path="res://scripts/dialogue_screen.gd" id="1_sef3l"]
+[ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="3_nxutc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lceey"]
+font = ExtResource("3_nxutc")
+font_size = 18
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="DialogueScreen" type="Control" node_paths=PackedStringArray("_name", "_dialog", "_faceset")]
 custom_minimum_size = Vector2(320, 80)
@@ -79,9 +88,12 @@ size_flags_horizontal = 3
 
 [node name="Name" type="Label" parent="Background/HContainer/VContainer"]
 layout_mode = 2
-horizontal_alignment = 2
+label_settings = SubResource("LabelSettings_lceey")
 vertical_alignment = 1
 
 [node name="Dialog" type="RichTextLabel" parent="Background/HContainer/VContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_nxutc")
+theme_override_font_sizes/normal_font_size = 14
