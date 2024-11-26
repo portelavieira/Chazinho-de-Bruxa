@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/pause_menu.tscn" id="13_6ahif"]
 [ext_resource type="Texture2D" uid="uid://cr67dmsdw3wu" path="res://assets/vizinhos/No-Sole/npc1-idle-front_no-sole.png" id="14_232yt"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="15_ko8v4"]
-[ext_resource type="PackedScene" path="res://GUI/objective_hud.tscn" id="16_c1kys"]
+[ext_resource type="PackedScene" uid="uid://tktuevficw7e" path="res://GUI/objective_hud.tscn" id="16_c1kys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hbcu"]
 texture = ExtResource("1_ym78l")
