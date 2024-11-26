@@ -161,5 +161,8 @@ func _on_dialogue_trigger_body_exited(body: Node2D) -> void:
 func _on_dialogue_completed():
 	_dialogue_completed = true
 	# Atualiza o texto da label no HUD global
-	$player/objective_hud/mission_text.show()
-	$vizinha.hide()
+	if Global.sucess == false:
+		$player/objective_hud/mission_text.show()
+		$vizinha.hide()
+	else:
+		$vizinha.hide()
