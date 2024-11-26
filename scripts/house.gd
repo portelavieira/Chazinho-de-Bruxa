@@ -11,9 +11,14 @@ var _player_in_area: bool = false
 var _dialogue_completed: bool = false
 var _dialog_data: Dictionary = {}
 
-func which_dialog():
+@export_category("Objects")
+@export var _hud: CanvasLayer = null
+
+var _current_dialogue: DialogueScreen = null
+
+func which_dialog() -> Dictionary:
 	if Global.sucess == false:
-		var _dialog_data: Dictionary = {
+		self._dialog_data = {
 			0: {
 				"faceset": "res://assets/nimue/No-Sole/nimue-idle-front_no-sole-faceset.png",
 				"dialog": "Ah, olá! Você deve ser minha vizinha.",
@@ -89,7 +94,7 @@ func which_dialog():
 		print(_dialog_data)
 
 	else:
-		var _dialog_data: Dictionary = {
+		self._dialog_data = {
 			0: {
 				"faceset": "res://assets/nimue/No-Sole/nimue-idle-front_no-sole-faceset.png",
 				"dialog": "Olá, obrigada por vir. Trouxe o que havia prometido, espero que goste!",
@@ -112,20 +117,25 @@ func which_dialog():
 			}
 		}
 		print(_dialog_data)
-	return _dialog_data
+	return self._dialog_data
 
-@export_category("Objects")
-@export var _hud: CanvasLayer = null
 
-var _current_dialogue: DialogueScreen = null
 
 func restart_scene():
 	if _current_dialogue:
 		_current_dialogue.queue_free()
 	
 	_current_dialogue = _DIALOG_SCREEN.instantiate() as DialogueScreen
+	if not _current_dialogue:
+		print("Erro: Não foi possível instanciar DialogueScreen.")
+		return
+		
 	_current_dialogue.data = which_dialog()
-	_hud.add_child(_current_dialogue)
+	if _hud:
+		_hud.add_child(_current_dialogue)
+	else:
+		print("Erro: HUD não está configurado.")
+	
 	_current_dialogue.reset_dialogue()
 
 	_current_dialogue.connect("tree_exited", Callable(self, "_on_dialogue_completed"))

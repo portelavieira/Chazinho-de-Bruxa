@@ -1,6 +1,6 @@
 extends Node
 
-var sucess:bool = false
+var sucess:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
