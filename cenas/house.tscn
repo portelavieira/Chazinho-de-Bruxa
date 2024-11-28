@@ -1037,6 +1037,7 @@ metadata/_edit_use_anchors_ = true
 [node name="HUD_Pause" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="HUD_Pause" instance=ExtResource("13_6ahif")]
+visible = false
 z_index = 6
 anchors_preset = 8
 anchor_left = 0.5

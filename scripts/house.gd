@@ -1,20 +1,17 @@
 extends Node2D
 class_name Level
 
-#mudar a imagem do personagem -> faceset
-#mudar dialogo -> dialog
-#mudar nome do personagem -> title
-
 const _DIALOG_SCREEN: PackedScene = preload("res://cenas/dialogue_screen.tscn")
 const OBJECTIVE_HUD: PackedScene = preload("res://GUI/objective_hud.tscn")
 
 var _player_in_area: bool = false
+var _dialogue_active: bool = false
 var _dialogue_completed: bool = false
 var _dialog_data: Dictionary = {}
 
 @export_category("Objects")
 @export var _hud: CanvasLayer = null
-
+	
 var _current_dialogue: DialogueScreen = null
 
 func which_dialog() -> Dictionary:
@@ -131,7 +128,6 @@ func which_dialog() -> Dictionary:
 	return self._dialog_data
 
 
-
 func restart_scene():
 	if _current_dialogue:
 		_current_dialogue.queue_free()
@@ -149,12 +145,20 @@ func restart_scene():
 	
 	_current_dialogue.reset_dialogue()
 
+	_dialogue_active = true  # Marca que o diálogo está ativo
 	_current_dialogue.connect("tree_exited", Callable(self, "_on_dialogue_completed"))
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("dialog") and _player_in_area and not _dialogue_completed:
+	if Input.is_action_just_pressed("dialog") and _player_in_area and not _dialogue_completed and not _dialogue_active:
 		$vizinha/Label.hide()
 		restart_scene()
+
+	if _dialogue_active:
+		# Bloqueia todas as ações, exceto "ui_accept"
+		var actions = InputMap.get_actions()
+		for action in actions:
+			if action != "ui_accept" or "pause":
+				Input.action_release(action)
 
 func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
 	print("Entrou: ", body.name)
@@ -168,9 +172,11 @@ func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
 func _on_dialogue_trigger_body_exited(body: Node2D) -> void:
 	if body.name == "player":
 		$vizinha/Label.hide()
+		_player_in_area = false
 
 func _on_dialogue_completed():
 	_dialogue_completed = true
+	_dialogue_active = false  # Libera as ações novamente
 	# Atualiza o texto da label no HUD global
 	if Global.sucess == false:
 		$HUD_objetivo/objective_hud.show()
