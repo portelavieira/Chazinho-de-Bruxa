@@ -6,6 +6,7 @@ class_name Level
 #mudar nome do personagem -> title
 
 const _DIALOG_SCREEN: PackedScene = preload("res://cenas/dialogue_screen.tscn")
+const OBJECTIVE_HUD: PackedScene = preload("res://GUI/objective_hud.tscn")
 
 var _player_in_area: bool = false
 var _dialogue_completed: bool = false
@@ -172,7 +173,7 @@ func _on_dialogue_completed():
 	_dialogue_completed = true
 	# Atualiza o texto da label no HUD global
 	if Global.sucess == false:
-		$player/objective_hud/Background.show()
+		$HUD_objetivo/objective_hud.show()
 		$vizinha.hide()
 	else:
 		$vizinha.hide()

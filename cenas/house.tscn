@@ -985,26 +985,6 @@ position = Vector2(107, 40)
 [node name="player" parent="." instance=ExtResource("7_jbnf5")]
 position = Vector2(85, 91)
 
-[node name="PauseMenu" parent="player" instance=ExtResource("13_6ahif")]
-z_index = 6
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-
-[node name="objective_hud" parent="player" instance=ExtResource("16_c1kys")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -85.0
-offset_top = -92.0
-offset_right = 95.0
-offset_bottom = -43.0
-grow_horizontal = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-
 [node name="camera2" type="Camera2D" parent="player"]
 zoom = Vector2(3.5, 3.5)
 limit_left = -150
@@ -1045,6 +1025,24 @@ theme_override_fonts/font = ExtResource("15_ko8v4")
 theme_override_font_sizes/font_size = 9
 text = "Pressione A para interagir"
 label_settings = SubResource("LabelSettings_n5orr")
+
+[node name="HUD_objetivo" type="CanvasLayer" parent="."]
+
+[node name="objective_hud" parent="HUD_objetivo" instance=ExtResource("16_c1kys")]
+visible = false
+size_flags_horizontal = 6
+size_flags_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD_Pause" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="HUD_Pause" instance=ExtResource("13_6ahif")]
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [connection signal="body_entered" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_entered"]
 [connection signal="body_exited" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_exited"]
