@@ -350,5 +350,13 @@ position = Vector2(0, 36)
 [node name="PauseMenu" parent="player" instance=ExtResource("13_qo88i")]
 z_index = 6
 
+[node name="camera2" type="Camera2D" parent="player"]
+zoom = Vector2(3.5, 3.5)
+limit_left = -2000
+limit_top = -1120
+limit_right = 2000
+limit_bottom = 1120
+editor_draw_limits = true
+
 [node name="portal" parent="." instance=ExtResource("14_0t0nc")]
 position = Vector2(0, -30)

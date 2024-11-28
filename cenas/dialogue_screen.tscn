@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rih3142d2t4p"]
+[gd_scene load_steps=6 format=3 uid="uid://rih3142d2t4p"]
 
-[ext_resource type="Texture2D" uid="uid://cc4s2cinlgkpq" path="res://icon.svg" id="1_r1gpo"]
 [ext_resource type="Script" path="res://scripts/dialogue_screen.gd" id="1_sef3l"]
+[ext_resource type="Texture2D" uid="uid://bv8s04dpd1dv2" path="res://assets/dialog.png" id="2_76be4"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="3_nxutc"]
+[ext_resource type="Texture2D" uid="uid://5nrh22ky3j2i" path="res://assets/nimue/No-Sole/nimue-idle-front_no-sole-faceset.png" id="3_uf0wq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lceey"]
 font = ExtResource("3_nxutc")
@@ -30,55 +31,69 @@ size_flags_vertical = 8
 script = ExtResource("1_sef3l")
 _name = NodePath("Background/HContainer/VContainer/Name")
 _dialog = NodePath("Background/HContainer/VContainer/Dialog")
-_faceset = NodePath("Background/HContainer/Border/Faceset")
+_faceset = NodePath("Background/HContainer/Border/ColorRect/Faceset")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.44375
-anchor_top = -0.9375
-anchor_right = 1.43125
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -30.0
+offset_left = -300.0
+offset_top = -185.0
+offset_right = 300.0
 offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 0.6)
+texture = ExtResource("2_76be4")
+patch_margin_left = 10
+patch_margin_top = 13
+patch_margin_right = 10
+patch_margin_bottom = 13
+axis_stretch_vertical = 2
 
 [node name="HContainer" type="HBoxContainer" parent="Background"]
-custom_minimum_size = Vector2(590, 145)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -156.0
-offset_top = -36.0
-offset_right = 156.0
-offset_bottom = 36.0
+offset_left = -287.5
+offset_top = -63.5
+offset_right = 287.5
+offset_bottom = 63.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Border" type="ColorRect" parent="Background/HContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(140, 50)
 layout_mode = 2
+color = Color(0.168627, 0.109804, 0.137255, 1)
 
-[node name="Faceset" type="TextureRect" parent="Background/HContainer/Border"]
-custom_minimum_size = Vector2(70, 72)
+[node name="ColorRect" type="ColorRect" parent="Background/HContainer/Border"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 139.0
+offset_bottom = 126.0
+color = Color(0.560784, 0.305882, 0.27451, 1)
+
+[node name="Faceset" type="TextureRect" parent="Background/HContainer/Border/ColorRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -77.5
-offset_top = -70.0
-offset_right = 77.5
-offset_bottom = 70.0
+offset_left = -68.0
+offset_top = -61.5
+offset_right = 68.0
+offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_r1gpo")
+texture = ExtResource("3_uf0wq")
 expand_mode = 1
 stretch_mode = 5
 
@@ -88,6 +103,7 @@ size_flags_horizontal = 3
 
 [node name="Name" type="Label" parent="Background/HContainer/VContainer"]
 layout_mode = 2
+text = "aaaa"
 label_settings = SubResource("LabelSettings_lceey")
 vertical_alignment = 1
 
@@ -97,3 +113,4 @@ size_flags_vertical = 3
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("3_nxutc")
 theme_override_font_sizes/normal_font_size = 14
+text = "aaaa"

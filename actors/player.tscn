@@ -263,7 +263,9 @@ script = ExtResource("1_vegs4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_qkq5o")
-animation = &"idle-up"
+animation = &"idle-left"
+frame = 2
+frame_progress = 0.464215
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 2)
@@ -275,6 +277,7 @@ z_index = 5
 scale = Vector2(0.25, 0.25)
 
 [node name="camera" type="Camera2D" parent="."]
+enabled = false
 zoom = Vector2(3.5, 3.5)
 limit_left = -2000
 limit_top = -1120

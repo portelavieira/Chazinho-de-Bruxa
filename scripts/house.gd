@@ -17,7 +17,7 @@ var _dialog_data: Dictionary = {}
 var _current_dialogue: DialogueScreen = null
 
 func which_dialog() -> Dictionary:
-	if Global.sucess == false:
+	if Global.dialog_id == 0:
 		self._dialog_data = {
 			0: {
 				"faceset": "res://assets/nimue/No-Sole/nimue-idle-front_no-sole-faceset.png",
@@ -91,7 +91,17 @@ func which_dialog() -> Dictionary:
 				"title": "Kaitlyn"
 			}
 		}
-		print(_dialog_data)
+
+		Global.dialog_id = 1
+
+	elif Global.dialog_id == 1 and Global.sucess == false:
+		self._dialog_data = {
+			0: {
+				"faceset":  "res://assets/vizinhos/No-Sole/npc1-idle-front_no-sole-faceset.png",
+				"dialog": "Estarei esperando pelo chá acalmante",
+				"title": "Kaitlyn"
+			}
+		}
 
 	else:
 		self._dialog_data = {
@@ -116,7 +126,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			}
 		}
-		print(_dialog_data)
+
 	return self._dialog_data
 
 
@@ -162,7 +172,7 @@ func _on_dialogue_completed():
 	_dialogue_completed = true
 	# Atualiza o texto da label no HUD global
 	if Global.sucess == false:
-		$player/objective_hud/mission_text.show()
+		$player/objective_hud/Background.show()
 		$vizinha.hide()
 	else:
 		$vizinha.hide()
