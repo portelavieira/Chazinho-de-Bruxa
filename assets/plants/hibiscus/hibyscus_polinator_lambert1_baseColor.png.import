@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bhbvaspujdjun"
+path.s3tc="res://.godot/imported/hibyscus_polinator_lambert1_baseColor.png-7f9f3592d88dd5e879f355108b74ea60.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3c3f057649f415dba9c0251697fbce95"
+}
+
+[deps]
+
+source_file="res://assets/plants/hibiscus/hibyscus_polinator_lambert1_baseColor.png"
+dest_files=["res://.godot/imported/hibyscus_polinator_lambert1_baseColor.png-7f9f3592d88dd5e879f355108b74ea60.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

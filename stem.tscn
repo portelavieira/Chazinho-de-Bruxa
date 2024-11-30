@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b424qpse4pl2"]
+
+[ext_resource type="ArrayMesh" uid="uid://2w3ctx8tido7" path="res://assets/meshs/stem.tres" id="1_apn65"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6npq"]
+size = Vector3(6.41033, 6.85722, 3.14215)
+
+[node name="Objeto" type="RigidBody3D"]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0, 0, 0)
+mesh = ExtResource("1_apn65")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.010738, 0.0158236, -0.0028514)
+shape = SubResource("BoxShape3D_x6npq")

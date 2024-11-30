@@ -5,4 +5,4 @@ func collect():
 	_change_scene()
 
 func _change_scene():
-		get_tree().change_scene_to_file("res://cenas/node_3d.tscn")
+		get_tree().change_scene_to_file("res://cenas/PuzzleSombras/node_3d.tscn")

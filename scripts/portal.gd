@@ -6,8 +6,8 @@ func _ready() -> void:
 
 # Mapeamento das cenas
 var scene_map: Dictionary = {
-	"oficial-forest": "res://cenas/house.tscn",
-	"house": "res://cenas/oficial-forest.tscn"
+	"oficial-forest": "res://cenas/main_scenes/house.tscn",
+	"house": "res://cenas/main_scenes/oficial-forest.tscn"
 }
 
 func _change_scene() -> void:
@@ -15,9 +15,9 @@ func _change_scene() -> void:
 	var current_scene_path = get_tree().current_scene.name
 	match current_scene_path:
 		"oficial-forest":
-			get_tree().change_scene_to_file("res://cenas/house.tscn")
+			get_tree().change_scene_to_file("res://cenas/main_scenes/house.tscn")
 		"house":
-			get_tree().change_scene_to_file("res://cenas/oficial-forest.tscn")
+			get_tree().change_scene_to_file("res://cenas/main_scenes/oficial-forest.tscn")
 
 func _on_animation_area_area_entered(_area: Area2D) -> void:
 	$magic/door.play("door_open")

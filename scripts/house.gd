@@ -1,7 +1,7 @@
 extends Node2D
 class_name Level
 
-const _DIALOG_SCREEN: PackedScene = preload("res://cenas/dialogue_screen.tscn")
+const _DIALOG_SCREEN: PackedScene = preload("res://cenas/HUDs/dialogue_screen.tscn")
 const OBJECTIVE_HUD: PackedScene = preload("res://GUI/objective_hud.tscn")
 
 var _player_in_area: bool = false
