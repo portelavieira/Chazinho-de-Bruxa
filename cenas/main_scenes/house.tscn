@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cmpshg3ajl7ry" path="res://assets/Woolly Lands/Woolly Lands FREE/House/Doors/Door 1-sheet Free.png" id="8_q026c"]
 [ext_resource type="Texture2D" uid="uid://b74tx40hnmiuu" path="res://assets/magic-Sheet.png" id="9_wwual"]
 [ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="10_60rhh"]
-[ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/pause_menu.tscn" id="13_6ahif"]
+[ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="13_6ahif"]
 [ext_resource type="Texture2D" uid="uid://cr67dmsdw3wu" path="res://assets/vizinhos/No-Sole/npc1-idle-front_no-sole.png" id="14_232yt"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="15_ko8v4"]
 [ext_resource type="PackedScene" uid="uid://b5n4nuanw8wi5" path="res://GUI/objective_hud.tscn" id="16_c1kys"]
@@ -926,6 +926,7 @@ outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
 
 [node name="house" type="Node2D" node_paths=PackedStringArray("_hud")]
+position = Vector2(-120, 0)
 script = ExtResource("1_4hju1")
 _hud = NodePath("HUD")
 
@@ -1044,6 +1045,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_entered"]
 [connection signal="body_exited" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_exited"]

@@ -1,0 +1,236 @@
+[gd_scene load_steps=9 format=3 uid="uid://daxod2os7bwcn"]
+
+[ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_0akla"]
+[ext_resource type="Texture2D" uid="uid://qb1r0odc2a2k" path="res://assets/house_bg.png" id="2_mh0ah"]
+[ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="2_nrh6x"]
+[ext_resource type="Texture2D" uid="uid://bwqjmal63epyb" path="res://assets/forest_bg.png" id="4_aaj5i"]
+[ext_resource type="Texture2D" uid="uid://dn18r1rmunktu" path="res://assets/puzzle_bg.png" id="5_xgn2r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dg0kg"]
+texture = ExtResource("2_mh0ah")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edpjd"]
+texture = ExtResource("4_aaj5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdpdq"]
+texture = ExtResource("5_xgn2r")
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0akla")
+
+[node name="Page1" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dg0kg")
+
+[node name="Label" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -167.0
+offset_right = 271.0
+offset_bottom = 168.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Ao começar, interaja com seu vizinho para começar um dialogo e receber sua primeira missão!
+
+Ao recebe-la, prossiga ao portal para continuar jogando e ir em busca de seu objetivo."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -98.5
+offset_bottom = 98.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Controles:
+- W/A/S/D ou Setas para se mover
+- A para interagir com NPCs
+- Aperte Escape para pausar o jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Page2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_edpjd")
+
+[node name="Label" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -232.0
+offset_right = 296.0
+offset_bottom = 233.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Ao chegar na floresta é quando seu aprendizado começa!
+
+Utilize de seu livro guia e suas capacidades para aprender sobre plantas medicinais e descobrir qual a planta perfeita para seu objetivo!
+
+Apenas se aproxime da planta que deseja coletar e então entrará no passo final para seu objetivo."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Page2"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -158.5
+offset_bottom = 158.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Controles:
+- E para abrir seu livro guia
+- W/A/S/D ou Setas para se mover
+- Aperte Escape para pausar o jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Page3" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gdpdq")
+
+[node name="Label" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -158.0
+offset_right = 291.0
+offset_bottom = 159.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Agora vem a etapa final!
+
+Utilize de sua magia para coletar a planta em condições boas!
+
+Rotacione-a até a posição perfeita para que a magia possa acontecer."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Page3"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -244.0
+offset_top = -158.5
+offset_bottom = 158.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Controles:
+- Utilize seu mouse para clicar e segurar em qualquer canto na tela e então arraste para rodar todos os pedaços simultaneamente
+
+- Aperte Escape para pausar o jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Forward" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -309.0
+offset_top = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/normal_font = ExtResource("2_nrh6x")
+theme_override_font_sizes/normal_font_size = 22
+text = "Aperte R para Avançar"
+
+[node name="Backward" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+offset_right = 289.0
+grow_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/normal_font = ExtResource("2_nrh6x")
+theme_override_font_sizes/normal_font_size = 22
+text = "Aperte Q para Voltar"

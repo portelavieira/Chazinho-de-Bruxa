@@ -17,7 +17,7 @@ var target_transforms = {
 }
 
 var tolerance_position = 0.05  # Tolerância para posição
-var tolerance_rotation = 40.0   # Tolerância para rotação (graus)
+var tolerance_rotation = 45.0   # Tolerância para rotação (graus)
 
 func _ready():
 	# Adiciona as peças na lista

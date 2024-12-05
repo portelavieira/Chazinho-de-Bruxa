@@ -1,11 +1,12 @@
 extends Node2D
 
 var chamomile = preload("res://assets/plants/chamomile_book.png")
+var hibiscus = preload("res://assets/plants/hibiscus_book.png")
 
 var flowers
 var info = [
 	["Camomila", Flowers.descriptions["Chamomile"]],
-	["Camomila", Flowers.descriptions["Chamomile"]]
+	["Hibisco", Flowers.descriptions["Hibiscus"]]
 ]
 var closing = false
 var open = false
@@ -14,7 +15,7 @@ var index = 0
 func _ready() -> void:
 	visible = false
 	flowers = [
-		chamomile, chamomile
+		chamomile, hibiscus
 	]
 
 func _process(_delta: float) -> void:

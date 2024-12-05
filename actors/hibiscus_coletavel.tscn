@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://05l7dkqbjchx"]
+
+[ext_resource type="PackedScene" uid="uid://brhv50lj15wkj" path="res://actors/coletaveis.tscn" id="1_lv5w6"]
+[ext_resource type="Script" path="res://scripts/hibiscus_coletavel.gd" id="2_587ti"]
+[ext_resource type="Texture2D" uid="uid://cv4tjdyu7n172" path="res://assets/Props/hibiscus.png" id="2_y5ujy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhpwt"]
+resource_local_to_scene = true
+size = Vector2(17.75, 15)
+
+[node name="hibiscus_coletavel" instance=ExtResource("1_lv5w6")]
+script = ExtResource("2_587ti")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_y5ujy")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.875, -1.5)
+shape = SubResource("RectangleShape2D_bhpwt")

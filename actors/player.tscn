@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cc6qjewhd85m5" path="res://assets/nimue/No-Sole/nimue-walk-left_no-sole.png" id="7_2f4p7"]
 [ext_resource type="Texture2D" uid="uid://cyj21c8lo02ho" path="res://assets/nimue/No-Sole/nimue-walk-right_no-sole.png" id="8_7yl6d"]
 [ext_resource type="Texture2D" uid="uid://33qw86lcj0e3" path="res://assets/nimue/No-Sole/nimue-walk-back_no-sole.png" id="9_4848m"]
-[ext_resource type="PackedScene" uid="uid://c3dcbf6u6kfs" path="res://cenas/book_view.tscn" id="10_34u4x"]
+[ext_resource type="PackedScene" uid="uid://c3dcbf6u6kfs" path="res://cenas/HUDs/book_view.tscn" id="10_34u4x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iyiyt"]
 atlas = ExtResource("2_ox1fw")
