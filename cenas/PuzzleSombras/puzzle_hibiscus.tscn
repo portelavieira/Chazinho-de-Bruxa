@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c6uqndd3hh545"]
+[gd_scene load_steps=13 format=3 uid="uid://c6uqndd3hh545"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_hibiscus.gd" id="1_xxk6g"]
+[ext_resource type="Texture2D" uid="uid://105ovxmmj4yt" path="res://assets/book/book_still.png" id="2_4flda"]
 [ext_resource type="PackedScene" uid="uid://d3m1x1s7dpncg" path="res://assets/plants/hibiscus/hibyscus_stem.glb" id="2_wh3ad"]
 [ext_resource type="PackedScene" uid="uid://87nu36jqjoc4" path="res://assets/plants/hibiscus/hibyscus_polinator.glb" id="3_noj43"]
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="6_q22hw"]
@@ -19,10 +20,14 @@ sky = SubResource("Sky_iu2nv")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_36haa"]
-size = Vector2(10, 10)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr2rg"]
+albedo_texture = ExtResource("2_4flda")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xt0m2"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_rb3ql"]
+material = SubResource("StandardMaterial3D_dr2rg")
+size = Vector2(9, 5.4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8v75j"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
@@ -32,12 +37,13 @@ script = ExtResource("1_xxk6g")
 environment = SubResource("Environment_dju50")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_36haa")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.523778)
+mesh = SubResource("PlaneMesh_rb3ql")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_xt0m2")
+shape = SubResource("ConcavePolygonShape3D_8v75j")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.53512, 0)
@@ -73,7 +79,7 @@ transform = Transform3D(-0.71072, 0.48784, -0.506843, 0.5395, 0.840358, 0.052336
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00588168, 0.999983, 0, -0.999983, -0.00588168, 0, 0.141388, -1.25363)
 visible = false
-text = "Você Venceu!"
+text = "Coleta feita com sucesso!"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5

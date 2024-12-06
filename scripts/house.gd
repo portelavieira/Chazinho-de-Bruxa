@@ -180,6 +180,3 @@ func _on_dialogue_completed():
 	# Atualiza o texto da label no HUD global
 	if Global.sucess == false:
 		$HUD_objetivo/objective_hud.show()
-		$vizinha.hide()
-	else:
-		$vizinha.hide()

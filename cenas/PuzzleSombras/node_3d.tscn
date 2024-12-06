@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr7a23eigodu1"]
+[gd_scene load_steps=15 format=3 uid="uid://cr7a23eigodu1"]
 
+[ext_resource type="Texture2D" uid="uid://105ovxmmj4yt" path="res://assets/book/book_still.png" id="1_jfrtj"]
 [ext_resource type="PackedScene" uid="uid://c5u8bn7wakea6" path="res://cenas/PuzzleSombras/objeto.tscn" id="1_ucplt"]
 [ext_resource type="PackedScene" uid="uid://dw18ve3ud7xq1" path="res://cenas/PuzzleSombras/chamomile/leftleaf.tscn" id="3_nc6dq"]
 [ext_resource type="PackedScene" uid="uid://csfje8abfa5qk" path="res://cenas/PuzzleSombras/chamomile/middleleaf.tscn" id="4_lvlw8"]
@@ -100,8 +101,12 @@ sky = SubResource("Sky_iu2nv")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1xoq"]
+albedo_texture = ExtResource("1_jfrtj")
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_36haa"]
-size = Vector2(10, 10)
+material = SubResource("StandardMaterial3D_q1xoq")
+size = Vector2(9, 5.4)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xt0m2"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
@@ -113,6 +118,7 @@ script = SubResource("GDScript_2xfny")
 environment = SubResource("Environment_dju50")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.523778)
 mesh = SubResource("PlaneMesh_36haa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
@@ -154,7 +160,7 @@ collision_mask = 16
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.00588168, 0.999983, 0, -0.999983, -0.00588168, 0, 0.141388, -1.25363)
 visible = false
-text = "Você Venceu!"
+text = "Coleta feita com sucesso!"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://c5etidkou3ppa"]
+[gd_scene load_steps=38 format=4 uid="uid://c5etidkou3ppa"]
 
 [ext_resource type="Texture2D" uid="uid://ecp5kx6t4k1a" path="res://assets/Tileset/Dirt - simplified.png" id="1_82uvc"]
 [ext_resource type="Texture2D" uid="uid://quwi45bft6pi" path="res://assets/Tileset/Fall - simplified.png" id="2_56r34"]
@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://05l7dkqbjchx" path="res://actors/hibiscus_coletavel.tscn" id="12_ocarc"]
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="13_qo88i"]
 [ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="14_0t0nc"]
+[ext_resource type="Texture2D" uid="uid://0u15lfh2vjda" path="res://assets/Props/SpringLeaf.png" id="16_nhes4"]
+[ext_resource type="Texture2D" uid="uid://dayh7qs3bp8j0" path="res://assets/Props/SummerLeaf.png" id="17_o4ivx"]
+[ext_resource type="Texture2D" uid="uid://bn3xq3m11r6tv" path="res://assets/Props/WinterLeaf.png" id="18_3qsi6"]
+[ext_resource type="Texture2D" uid="uid://d1sg0psop3ols" path="res://assets/Props/FallLeaf.png" id="19_2keo1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt7om"]
 texture = ExtResource("1_82uvc")
@@ -327,6 +331,36 @@ sources/11 = SubResource("TileSetAtlasSource_uqsxj")
 sources/8 = SubResource("TileSetScenesCollectionSource_763hb")
 sources/9 = SubResource("TileSetScenesCollectionSource_th77n")
 
+[sub_resource type="Curve" id="Curve_4i0tk"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 51.4286), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bpmg6"]
+curve = SubResource("Curve_4i0tk")
+
+[sub_resource type="Curve" id="Curve_r7v8c"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1ubxt"]
+curve = SubResource("Curve_r7v8c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_823f0"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 100, 1)
+angle_min = 1.00001
+angle_max = 4.00001
+angle_curve = SubResource("CurveTexture_bpmg6")
+initial_velocity_min = 1.0
+initial_velocity_max = 15.0
+gravity = Vector3(125, 98, 0)
+linear_accel_min = 1.15
+linear_accel_max = 1.15
+scale_curve = SubResource("CurveTexture_1ubxt")
+
 [node name="oficial-forest" type="Node2D"]
 
 [node name="Terrain" type="TileMapLayer" parent="."]
@@ -368,3 +402,31 @@ editor_draw_limits = true
 
 [node name="portal" parent="." instance=ExtResource("14_0t0nc")]
 position = Vector2(0, -30)
+
+[node name="particles_spring" type="GPUParticles2D" parent="."]
+position = Vector2(998, 563)
+scale = Vector2(10, 5.5)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_823f0")
+texture = ExtResource("16_nhes4")
+
+[node name="particles_summer" type="GPUParticles2D" parent="."]
+position = Vector2(1007, -570)
+scale = Vector2(10, 5.5)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_823f0")
+texture = ExtResource("17_o4ivx")
+
+[node name="particles_winter" type="GPUParticles2D" parent="."]
+position = Vector2(-1004, -573)
+scale = Vector2(10, 5.5)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_823f0")
+texture = ExtResource("18_3qsi6")
+
+[node name="particles_fall" type="GPUParticles2D" parent="."]
+position = Vector2(-997, 570)
+scale = Vector2(10, 5.5)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_823f0")
+texture = ExtResource("19_2keo1")
