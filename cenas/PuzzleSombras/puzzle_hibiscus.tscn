@@ -20,11 +20,11 @@ sky = SubResource("Sky_iu2nv")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr2rg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2e2d"]
 albedo_texture = ExtResource("2_4flda")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rb3ql"]
-material = SubResource("StandardMaterial3D_dr2rg")
+material = SubResource("StandardMaterial3D_t2e2d")
 size = Vector2(9, 5.4)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8v75j"]
@@ -37,7 +37,7 @@ script = ExtResource("1_xxk6g")
 environment = SubResource("Environment_dju50")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.523778)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07838, 0, -0.523778)
 mesh = SubResource("PlaneMesh_rb3ql")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]

@@ -101,14 +101,14 @@ sky = SubResource("Sky_iu2nv")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1xoq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dr2rg"]
 albedo_texture = ExtResource("1_jfrtj")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_36haa"]
-material = SubResource("StandardMaterial3D_q1xoq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_5ess2"]
+material = SubResource("StandardMaterial3D_dr2rg")
 size = Vector2(9, 5.4)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xt0m2"]
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7xes1"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
 [node name="Node3D" type="Node3D"]
@@ -118,13 +118,13 @@ script = SubResource("GDScript_2xfny")
 environment = SubResource("Environment_dju50")
 
 [node name="Floor" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.523778)
-mesh = SubResource("PlaneMesh_36haa")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00573, 0, -0.523778)
+mesh = SubResource("PlaneMesh_5ess2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_xt0m2")
+shape = SubResource("ConcavePolygonShape3D_7xes1")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.53512, 0)
