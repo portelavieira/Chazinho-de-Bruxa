@@ -1,0 +1,89 @@
+[gd_scene load_steps=15 format=3 uid="uid://fuo77s2vdcm7"]
+
+[ext_resource type="Script" path="res://scripts/puzzle_ginger.gd" id="1_0675h"]
+[ext_resource type="Texture2D" uid="uid://105ovxmmj4yt" path="res://assets/book/book_still.png" id="2_tsecr"]
+[ext_resource type="PackedScene" uid="uid://dk7chr26qkdgf" path="res://assets/plants/ginger_root/ginger_root1.glb" id="3_nf0ce"]
+[ext_resource type="PackedScene" uid="uid://e0ygb6ufrcof" path="res://assets/plants/ginger_root/ginger_root2.glb" id="4_un7dc"]
+[ext_resource type="PackedScene" uid="uid://drjjxkvnr22lg" path="res://assets/plants/ginger_root/ginger_root3.glb" id="5_3dw1y"]
+[ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="6_qbsuw"]
+[ext_resource type="PackedScene" uid="uid://dea4fe2d11h8q" path="res://assets/plants/ginger_root/ginger_root4.glb" id="6_wtv42"]
+[ext_resource type="PackedScene" uid="uid://djsj7nitox2dl" path="res://assets/plants/ginger_root/ginger_root5.glb" id="7_beell"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x5tls"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_iu2nv"]
+sky_material = SubResource("ProceduralSkyMaterial_x5tls")
+
+[sub_resource type="Environment" id="Environment_dju50"]
+background_mode = 2
+sky = SubResource("Sky_iu2nv")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2e2d"]
+albedo_texture = ExtResource("2_tsecr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rb3ql"]
+material = SubResource("StandardMaterial3D_t2e2d")
+size = Vector2(9, 5.4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8v75j"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_0675h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dju50")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185441, 0, -0.523778)
+mesh = SubResource("PlaneMesh_rb3ql")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8v75j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.20715, 2.53512, 0)
+fov = 73.3
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.173648, -0.754407, 0.633022, 0, 0.642788, 0.766044, -0.984808, -0.133022, 0.111619, 3.27916, 4.72101, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 50.0
+
+[node name="ginger_root1" parent="." instance=ExtResource("3_nf0ce")]
+transform = Transform3D(-3.58959, 5.15865, -6.44229, 8.14071, 1.05729, -3.68931, -1.35783, -7.29866, -5.08782, -0.445038, 0.973305, -0.474422)
+
+[node name="ginger_root2" parent="." instance=ExtResource("4_un7dc")]
+transform = Transform3D(-4.37292, 5.15414, -5.94242, 7.61529, 1.07026, -4.67567, -1.97102, -7.29996, -4.88116, -0.000505209, 0.653528, -0.359238)
+
+[node name="ginger_root3" parent="." instance=ExtResource("5_3dw1y")]
+transform = Transform3D(-3.91581, 5.15457, -6.25274, 7.94154, 1.05963, -4.0999, -1.61196, -7.3012, -5.00939, -0.445599, 0.973788, -0.0783686)
+
+[node name="ginger_root4" parent="." instance=ExtResource("6_wtv42")]
+transform = Transform3D(-5.29365, 5.15169, -5.14172, 6.7392, 1.06738, -5.86889, -2.74961, -7.3021, -4.48541, -0.367723, 0.882392, 0.49977)
+
+[node name="ginger_root5" parent="." instance=ExtResource("7_beell")]
+transform = Transform3D(-5.04004, 5.14927, -5.39287, 7.01236, 1.06052, -5.54095, -2.53473, -7.30482, -4.60595, -0.0823967, 0.638916, 0.171038)
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.00588168, 0.999983, 0, -0.999983, -0.00588168, -1.14526, 0.141388, -1.25363)
+visible = false
+text = "Coleta feita com sucesso!"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_qbsuw")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(1.7, 1.7)
