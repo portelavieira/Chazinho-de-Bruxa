@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://drdhwjw8jo7oe"]
+
+[ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="1_p66f2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ii2wc"]
+font = ExtResource("1_p66f2")
+font_size = 24
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.260114, 0.125182, 0.1089, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -438.5
+offset_top = -110.5
+offset_right = 438.5
+offset_bottom = 110.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "O tempo passa, mas a adaptação de Nimue em uma nova cidade está longe de estar completa. Ainda é possível ver caixas de mudança pela sala, apesar de um tempo ter se passado de sua chegada. 
+
+Nimue estava procurando meios de continuar a fugir de arrumar sua casa, quando é surpreendida pela chegada de alguém."
+label_settings = SubResource("LabelSettings_ii2wc")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/dialogue_screen.gd" id="1_sef3l"]
 [ext_resource type="Texture2D" uid="uid://bv8s04dpd1dv2" path="res://assets/dialog.png" id="2_76be4"]
+[ext_resource type="Texture2D" uid="uid://cymlnd511ie61" path="res://assets/vizinhos/npc1-faceset.png" id="3_1piu8"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="3_nxutc"]
-[ext_resource type="Texture2D" uid="uid://5nrh22ky3j2i" path="res://assets/nimue/No-Sole/nimue-idle-front_no-sole-faceset.png" id="3_uf0wq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lceey"]
 font = ExtResource("3_nxutc")
@@ -93,7 +93,7 @@ offset_right = 68.0
 offset_bottom = 61.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_uf0wq")
+texture = ExtResource("3_1piu8")
 expand_mode = 1
 stretch_mode = 5
 

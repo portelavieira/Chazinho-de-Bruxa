@@ -1,4 +1,4 @@
 extends Node
 
-var sucess:bool = false
+var sucess = 0
 var dialog_id = 0

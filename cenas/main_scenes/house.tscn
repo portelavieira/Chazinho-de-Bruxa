@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://ssh5636n36ii"]
+[gd_scene load_steps=56 format=4 uid="uid://ssh5636n36ii"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4hju1"]
 [ext_resource type="Texture2D" uid="uid://dvyw87i6por7i" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_sy5dv"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ckorfhgax2gv0" path="res://actors/portal.tscn" id="10_60rhh"]
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="13_6ahif"]
 [ext_resource type="Texture2D" uid="uid://cr67dmsdw3wu" path="res://assets/vizinhos/No-Sole/npc1-idle-front_no-sole.png" id="14_232yt"]
+[ext_resource type="Texture2D" uid="uid://c3ghyjvqc1i0j" path="res://assets/vizinhos/No-Sole/npc2-idle-front_no-sole-Sheet.png" id="14_ljrpx"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="15_ko8v4"]
 [ext_resource type="PackedScene" uid="uid://b5n4nuanw8wi5" path="res://GUI/objective_hud.tscn" id="16_c1kys"]
 
@@ -893,6 +894,22 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("14_232yt")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvfk7"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbdhp"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04rt2"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ltf"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(96, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ngeyg"]
 animations = [{
 "frames": [{
@@ -909,7 +926,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_2v7u0")
 }],
 "loop": true,
-"name": &"default",
+"name": &"vizinha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvfk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbdhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04rt2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ltf")
+}],
+"loop": true,
+"name": &"vizinho",
 "speed": 5.0
 }]
 
@@ -1002,9 +1036,10 @@ position = Vector2(33, -27)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="vizinha"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ngeyg")
-autoplay = "default"
-frame = 1
-frame_progress = 0.0453879
+animation = &"vizinha"
+autoplay = "vizinha"
+frame = 3
+frame_progress = 0.0669027
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vizinha"]
 shape = SubResource("RectangleShape2D_lfiyb")

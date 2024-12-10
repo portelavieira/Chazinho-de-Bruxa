@@ -62,7 +62,6 @@ func _input(event):
 			await get_tree().create_timer(2.5).timeout
 			_change_scene()
 			$Label3D.visible = false
-			Global.sucess = true
 
 func print_piece_states():
 	# Itera pelas peças e imprime as informações de posição e ângulo
@@ -85,6 +84,7 @@ func check_all_pieces_aligned() -> bool:
 	return true
 
 func _change_scene():
+	Global.sucess = 1
 	get_tree().change_scene_to_file(\"res://cenas/main_scenes/oficial-forest.tscn\")
 "
 
