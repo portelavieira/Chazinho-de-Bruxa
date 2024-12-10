@@ -4,6 +4,9 @@ func _ready() -> void:
 	$magic.play("magic")
 	$magic/door.play("door_closes")
 
+func _process(_delta: float) -> void:
+	pass
+
 # Mapeamento das cenas
 var scene_map: Dictionary = {
 	"oficial-forest": "res://cenas/main_scenes/house.tscn",
@@ -11,6 +14,11 @@ var scene_map: Dictionary = {
 }
 
 func _change_scene() -> void:
+	# Verifica as condições antes de mudar a cena
+	if (Global.dialog_id == 0 or Global.dialog_id == 2) and Global.sucess == 0:
+		print("Portal bloqueado devido às condições globais.")
+		return
+
 	# Obtém o caminho da cena atual
 	var current_scene_path = get_tree().current_scene.name
 	match current_scene_path:

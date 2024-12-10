@@ -174,7 +174,7 @@ func which_dialog() -> Dictionary:
 		self._dialog_data = {
 			0: {
 				"faceset":  "res://icon.svg",
-				"dialog": "Não se preocupe, estarei esperando aqui. Pode olhar suas coisas com calma.",
+				"dialog": "Não se preocupe, estarei esperando aqui pela planta que irá ajudar a diminuir a minha pressão. Pode olhar suas coisas com calma.",
 				"title": "Ethan"
 			}
 		}
@@ -286,5 +286,5 @@ func _on_dialogue_completed():
 	_dialogue_completed = true
 	_dialogue_active = false  # Libera as ações novamente
 	# Atualiza o texto da label no HUD global
-	if Global.sucess == 0 and Global.dialog_id == 1:
+	if Global.sucess == 0 and Global.dialog_id == 1 or Global.dialog_id == 3 and Global.sucess != 2:
 		$HUD_objetivo/objective_hud.show()

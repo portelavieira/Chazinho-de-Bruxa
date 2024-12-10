@@ -31,9 +31,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -298.5
-offset_right = 298.5
-offset_bottom = 80.0
+offset_left = -298.0
+offset_right = 299.0
+offset_bottom = 106.0
 grow_horizontal = 2
 texture = ExtResource("2_w8xnp")
 region_rect = Rect2(610, 95, 92, 49)
@@ -49,14 +49,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -116.5
-offset_top = -6.0
-offset_right = 116.5
-offset_bottom = 26.0
+offset_left = -264.5
+offset_top = -20.0
+offset_right = 265.5
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 8
 text = "Objetivo: 
-Consiga uma flor acalmante"
+Procure em seu livro (Pressione E) a melhor opção
+para ajudar seu vizinho e a encontre na floresta secreta"
 label_settings = SubResource("LabelSettings_6276a")
 vertical_alignment = 1
