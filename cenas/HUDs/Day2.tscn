@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drdhwjw8jo7oe"]
+[gd_scene load_steps=5 format=3 uid="uid://drdhwjw8jo7oe"]
 
+[ext_resource type="Script" path="res://cenas/HUDs/day_2.gd" id="1_0x0mm"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="1_p66f2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ii2wc"]
@@ -10,6 +11,14 @@ outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_enixj"]
+font = ExtResource("1_p66f2")
+font_size = 20
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -17,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0x0mm")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -47,3 +57,19 @@ label_settings = SubResource("LabelSettings_ii2wc")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -343.0
+offset_top = -43.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pressione A para continuar"
+label_settings = SubResource("LabelSettings_enixj")

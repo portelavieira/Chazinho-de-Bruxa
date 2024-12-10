@@ -62,3 +62,4 @@ root_node = NodePath("../ColorRect")
 libraries = {
 "": SubResource("AnimationLibrary_5eeg1")
 }
+autoplay = "fade-in"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://ssh5636n36ii"]
+[gd_scene load_steps=59 format=4 uid="uid://ssh5636n36ii"]
 
 [ext_resource type="Script" path="res://scripts/house.gd" id="1_4hju1"]
 [ext_resource type="Texture2D" uid="uid://dvyw87i6por7i" path="res://assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_sy5dv"]
@@ -894,22 +894,6 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("14_232yt")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvfk7"]
-atlas = ExtResource("14_ljrpx")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fbdhp"]
-atlas = ExtResource("14_ljrpx")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04rt2"]
-atlas = ExtResource("14_ljrpx")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0ltf"]
-atlas = ExtResource("14_ljrpx")
-region = Rect2(96, 0, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ngeyg"]
 animations = [{
 "frames": [{
@@ -928,23 +912,6 @@ animations = [{
 "loop": true,
 "name": &"vizinha",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvfk7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fbdhp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_04rt2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b0ltf")
-}],
-"loop": true,
-"name": &"vizinho",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfiyb"]
@@ -958,6 +925,48 @@ font_size = 8
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6i3p"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhm8n"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tljn"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpb2r"]
+atlas = ExtResource("14_ljrpx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54vnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6i3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhm8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tljn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpb2r")
+}],
+"loop": true,
+"name": &"vizinho",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh0k6"]
+size = Vector2(10, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13kgh"]
+radius = 14.0
 
 [node name="house" type="Node2D" node_paths=PackedStringArray("_hud")]
 position = Vector2(-120, 0)
@@ -1037,9 +1046,6 @@ position = Vector2(33, -27)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ngeyg")
 animation = &"vizinha"
-autoplay = "vizinha"
-frame = 3
-frame_progress = 0.0669027
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="vizinha"]
 shape = SubResource("RectangleShape2D_lfiyb")
@@ -1057,6 +1063,39 @@ offset_left = -65.0
 offset_top = -22.0
 offset_right = 75.0
 offset_bottom = -12.0
+theme_override_fonts/font = ExtResource("15_ko8v4")
+theme_override_font_sizes/font_size = 9
+text = "Pressione A para interagir"
+label_settings = SubResource("LabelSettings_n5orr")
+
+[node name="vizinho" type="CharacterBody2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="vizinho"]
+position = Vector2(33, -27)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_54vnq")
+animation = &"vizinho"
+autoplay = "vizinho"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vizinho"]
+position = Vector2(33, -27)
+shape = SubResource("RectangleShape2D_fh0k6")
+
+[node name="dialogue_trigger" type="Area2D" parent="vizinho"]
+position = Vector2(33, -27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="vizinho/dialogue_trigger"]
+shape = SubResource("CircleShape2D_13kgh")
+
+[node name="Label" type="Label" parent="vizinho"]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+offset_left = -32.0
+offset_top = -49.0
+offset_right = 108.0
+offset_bottom = -39.0
 theme_override_fonts/font = ExtResource("15_ko8v4")
 theme_override_font_sizes/font_size = 9
 text = "Pressione A para interagir"

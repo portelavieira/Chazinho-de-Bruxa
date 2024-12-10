@@ -101,7 +101,7 @@ func on_puzzle_complete():
 	await get_tree().create_timer(2.5).timeout
 	_change_scene()
 	$Label3D.visible = false
-	Global.sucess = true
+	Global.sucess = 2
 
 func _change_scene():
 	get_tree().change_scene_to_file("res://cenas/main_scenes/oficial-forest.tscn")

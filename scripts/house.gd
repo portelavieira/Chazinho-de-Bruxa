@@ -100,6 +100,15 @@ func which_dialog() -> Dictionary:
 				"title": "Kaitlyn"
 			}
 		}
+	
+	elif Global.dialog_id == 1 and Global.sucess == 2 or Global.sucess == 3:
+		self._dialog_data = {
+			0: {
+				"faceset":  "res://assets/vizinhos/npc1-faceset.png",
+				"dialog": "Tem certeza que esse é o chá que mencionou? Pode procurar com mais calma, estarei esperando.",
+				"title": "Kaitlyn"
+			}
+		}
 
 	elif Global.dialog_id == 1 and Global.sucess == 1:
 		self._dialog_data = {
@@ -124,8 +133,83 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			}
 		}
-
 		Global.dialog_id = 2
+		
+	elif Global.dialog_id == 2:
+		self._dialog_data = {
+			0: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Olá! Você parece familiar...",
+				"title": "Nimue"
+			},
+			1: {
+				"faceset": "res://icon.svg",
+				"dialog": "Oi, você deve ser a Nimue. Sou o irmão da Kaitlyn, meu nome é Ethan. Ela me falou muito bem de você e... do seu chá especial.",
+				"title": "Ethan"
+			},
+			2: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Ah, Ethan! É um prazer conhecê-lo. Fico feliz que o chá tenha ajudado a sua irmã. Como posso ajudar você?",
+				"title": "Nimue"
+			},
+			3: {
+				"faceset": "res://icon.svg",
+				"dialog": "Bom... vou ser direto. Eu tenho sofrido com pressão alta ultimamente. O trabalho tem sido estressante, e meu médico recomendou que eu mudasse alguns hábitos. Kaitlyn mencionou que você parece saber bastante sobre chás. Será que você tem algo que possa me ajudar?",
+				"title": "Ethan"
+			},
+			4: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Entendo, isso realmente é algo sério. Mas acho que tenho exatamente o que você precisa! Espere aqui por um estante, logo trarei um chá que poderá te ajudar.",
+				"title": "Nimue"
+			},
+			5: {
+				"faceset": "res://icon.svg",
+				"dialog": "Nossa, sério? Agradeço bastante! Estarei esperado por aqui.",
+				"title": "Ethan"
+			}
+		}
+		Global.dialog_id = 3
+
+	elif Global.dialog_id == 3 and Global.sucess != 2:
+		self._dialog_data = {
+			0: {
+				"faceset":  "res://icon.svg",
+				"dialog": "Não se preocupe, estarei esperando aqui. Pode olhar suas coisas com calma.",
+				"title": "Ethan"
+			}
+		}
+
+	elif Global.dialog_id == 3 and Global.sucess == 2:
+		self._dialog_data = {
+			0: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Aqui está o chá que prometi. Se chama 'chá de hibisco' Preparei uma porção para você experimentar. É simples de fazer, basta adicionar água quente e deixar em infusão por alguns minutos.",
+				"title": "Nimue"
+			},
+			1: {
+				"faceset": "res://icon.svg",
+				"dialog": "Muito obrigado, Nimue. Vou seguir suas instruções e testar hoje mesmo!",
+				"title": "Ethan"
+			},
+			2: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Fico feliz em ajudar, Ethan. Me avise como se sente depois. E não hesite em voltar se precisar de mais alguma coisa.",
+				"title": "Nimue"
+			},
+			3: {
+				"faceset": "res://icon.svg",
+				"dialog": "Pode deixar. Mais uma vez, obrigado pela atenção e pelo chá. Até logo!",
+				"title": "Ethan"
+			},
+			4: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Até logo, Ethan. Cuide-se!",
+				"title": "Nimue"
+			}
+		}
+
+		Global.dialog_id = 4
+
 
 	return self._dialog_data
 
@@ -151,8 +235,11 @@ func restart_scene():
 	_current_dialogue.connect("tree_exited", Callable(self, "_on_dialogue_completed"))
 
 func _process(_delta: float) -> void:
+	$vizinha/AnimatedSprite2D.play("vizinha")
+	
 	if Input.is_action_just_pressed("dialog") and _player_in_area and not _dialogue_completed and not _dialogue_active:
 		$vizinha/Label.hide()
+		$vizinho/Label.hide()
 		restart_scene()
 
 	if _dialogue_active:
@@ -162,9 +249,21 @@ func _process(_delta: float) -> void:
 			if action != "ui_accept" or "pause":
 				Input.action_release(action)
 	
-	if Global.dialog_id == 2:
+	if Global.dialog_id == 2 and _dialogue_completed:
+		Global.vizinha_animation_state = "vizinho"
+		get_tree().change_scene_to_file("res://cenas/HUDs/Day2.tscn")
 		
-		pass
+func _ready() -> void:
+	var animation_state = Global.vizinha_animation_state
+
+	if animation_state == "vizinho":
+		$vizinho.show()
+		$vizinha.hide()
+	else:
+		$vizinha.show()
+		$vizinho.hide()
+
+
 
 func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
 	print("Entrou: ", body.name)
@@ -172,12 +271,15 @@ func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
 		_player_in_area = true
 		if _dialogue_completed:
 			$vizinha/Label.hide()
+			$vizinho/Label.hide()
 		else:
 			$vizinha/Label.show()
+			$vizinho/Label.show()
 
 func _on_dialogue_trigger_body_exited(body: Node2D) -> void:
 	if body.name == "player":
 		$vizinha/Label.hide()
+		$vizinho/Label.hide()
 		_player_in_area = false
 
 func _on_dialogue_completed():
