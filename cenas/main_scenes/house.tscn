@@ -1121,5 +1121,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 scale = Vector2(2, 2)
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="body_entered" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_entered"]
 [connection signal="body_exited" from="vizinha/dialogue_trigger" to="." method="_on_dialogue_trigger_body_exited"]

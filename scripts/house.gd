@@ -74,16 +74,21 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			11: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "(Minha magia de coleta é um pouco falha, mas devo conseguir coletar a planta perfeita para isso)",
+				"title": "Nimue"
+			},
+			12: {
 				"faceset":  "res://assets/vizinhos/npc1-faceset.png",
 				"dialog": "Poxa, Nimue, muito obrigada. Seria ótimo!",
 				"title": "Kaitlyn"
 			},
-			12: {
+			13: {
 				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
 				"dialog": "Não precisa agradecer. Somos vizinhas, não é? Acho que temos que nos ajudar.",
 				"title": "Nimue"
 			},
-			13: {
+			14: {
 				"faceset":  "res://assets/vizinhos/npc1-faceset.png",
 				"dialog": "Com certeza! E se precisar de algo também, pode contar comigo.",
 				"title": "Kaitlyn"
@@ -101,7 +106,7 @@ func which_dialog() -> Dictionary:
 			}
 		}
 	
-	elif Global.dialog_id == 1 and Global.sucess == 2 or Global.sucess == 3:
+	elif Global.dialog_id == 1 and Global.sucess != 1:
 		self._dialog_data = {
 			0: {
 				"faceset":  "res://assets/vizinhos/npc1-faceset.png",
@@ -143,7 +148,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			1: {
-				"faceset": "res://icon.svg",
+				"faceset": "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Oi, você deve ser a Nimue. Sou o irmão da Kaitlyn, meu nome é Ethan. Ela me falou muito bem de você e... do seu chá especial.",
 				"title": "Ethan"
 			},
@@ -153,7 +158,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			3: {
-				"faceset": "res://icon.svg",
+				"faceset": "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Bom... vou ser direto. Eu tenho sofrido com pressão alta ultimamente. O trabalho tem sido estressante, e meu médico recomendou que eu mudasse alguns hábitos. Kaitlyn mencionou que você parece saber bastante sobre chás. Será que você tem algo que possa me ajudar?",
 				"title": "Ethan"
 			},
@@ -163,7 +168,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			5: {
-				"faceset": "res://icon.svg",
+				"faceset": "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Nossa, sério? Agradeço bastante! Estarei esperado por aqui.",
 				"title": "Ethan"
 			}
@@ -173,11 +178,12 @@ func which_dialog() -> Dictionary:
 	elif Global.dialog_id == 3 and Global.sucess != 2:
 		self._dialog_data = {
 			0: {
-				"faceset":  "res://icon.svg",
+				"faceset":  "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Não se preocupe, estarei esperando aqui pela planta que irá ajudar a diminuir a minha pressão. Pode olhar suas coisas com calma.",
 				"title": "Ethan"
 			}
 		}
+		
 
 	elif Global.dialog_id == 3 and Global.sucess == 2:
 		self._dialog_data = {
@@ -187,7 +193,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			1: {
-				"faceset": "res://icon.svg",
+				"faceset": "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Muito obrigado, Nimue. Vou seguir suas instruções e testar hoje mesmo!",
 				"title": "Ethan"
 			},
@@ -197,7 +203,7 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			},
 			3: {
-				"faceset": "res://icon.svg",
+				"faceset": "res://assets/vizinhos/npc2-faceset.png",
 				"dialog": "Pode deixar. Mais uma vez, obrigado pela atenção e pelo chá. Até logo!",
 				"title": "Ethan"
 			},
@@ -207,9 +213,66 @@ func which_dialog() -> Dictionary:
 				"title": "Nimue"
 			}
 		}
-
 		Global.dialog_id = 4
 
+	elif Global.dialog_id == 4:
+		self._dialog_data = {
+			0: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Hmm... sinto minha cabeça pesada e meu corpo está estranho... Será que estou ficando doente?",
+				"title": "Nimue"
+			},
+			1: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "... Droga, acho que toda a movimentação de terminar a mudança e ajudar os vizinhos foi demais pra mim",
+				"title": "Nimue"
+			},
+			2: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Tenho que cuidar disso logo antes que piore",
+				"title": "Nimue"
+			},
+			3: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "E ja sei exatamente do que eu preciso",
+				"title": "Nimue"
+			}
+		}
+		Global.dialog_id = 5
+	
+	elif Global.dialog_id == 5 and Global.sucess != 3:
+		self._dialog_data = {
+			0: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Tenho que achar o ingrediente logo",
+				"title": "Nimue"
+			}
+		}
+	
+	elif Global.dialog_id == 5 and Global.sucess == 3:
+		self._dialog_data = {
+			0: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Agora sim, ja posso fazer meu chá para descansar",
+				"title": "Nimue"
+			},
+			1: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "...",
+				"title": "Nimue"
+			},
+			2: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "É, o gosto continua não tão bom quanto eu gostaria, mas ao menos eu sei que funciona",
+				"title": "Nimue"
+			},
+			3: {
+				"faceset": "res://assets/nimue/faceset/faceset-nimue.png",
+				"dialog": "Me pergunto que aventuras acontecerão nessa nova vizinhança... Bom, seja o que for ajudarei todos que precisarem!",
+				"title": "Nimue"
+			}
+		}
+		Global.dialog_id = 6
 
 	return self._dialog_data
 
@@ -252,6 +315,13 @@ func _process(_delta: float) -> void:
 	if Global.dialog_id == 2 and _dialogue_completed:
 		Global.vizinha_animation_state = "vizinho"
 		get_tree().change_scene_to_file("res://cenas/HUDs/Day2.tscn")
+	
+	if Global.dialog_id == 4 and _dialogue_completed:
+		Global.vizinha_animation_state = ""
+		get_tree().change_scene_to_file("res://cenas/HUDs/Day3.tscn")
+	
+	if Global.dialog_id == 6 and _dialogue_completed:
+		get_tree().change_scene_to_file("res://cenas/main_scenes/fim.tscn")
 		
 func _ready() -> void:
 	var animation_state = Global.vizinha_animation_state
@@ -262,8 +332,11 @@ func _ready() -> void:
 	else:
 		$vizinha.show()
 		$vizinho.hide()
-
-
+	
+	# Inicia o diálogo automaticamente após 1 segundo se Global.dialog_id for 4 ou 5
+	if Global.dialog_id == 4 or (Global.dialog_id == 5 and Global.sucess == 3):
+		$Timer.start()
+		restart_scene()
 
 func _on_dialogue_trigger_body_entered(body: Node2D) -> void:
 	print("Entrou: ", body.name)
@@ -286,5 +359,5 @@ func _on_dialogue_completed():
 	_dialogue_completed = true
 	_dialogue_active = false  # Libera as ações novamente
 	# Atualiza o texto da label no HUD global
-	if Global.sucess == 0 and Global.dialog_id == 1 or Global.dialog_id == 3 and Global.sucess != 2:
+	if Global.sucess == 0 and Global.dialog_id == 1 or Global.dialog_id == 3 and Global.sucess != 2 or Global.dialog_id == 4 and Global.sucess != 3:
 		$HUD_objetivo/objective_hud.show()

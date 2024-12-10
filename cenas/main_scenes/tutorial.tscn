@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://daxod2os7bwcn"]
+[gd_scene load_steps=11 format=3 uid="uid://daxod2os7bwcn"]
 
 [ext_resource type="Script" path="res://scripts/tutorial.gd" id="1_0akla"]
+[ext_resource type="Texture2D" uid="uid://p6in2ye3ni6w" path="res://assets/menu_bg.png" id="2_g3wb8"]
 [ext_resource type="Texture2D" uid="uid://qb1r0odc2a2k" path="res://assets/house_bg.png" id="2_mh0ah"]
 [ext_resource type="FontFile" uid="uid://ddb8n62puol8b" path="res://assets/Yuruka STD.ttf" id="2_nrh6x"]
 [ext_resource type="Texture2D" uid="uid://bwqjmal63epyb" path="res://assets/forest_bg.png" id="4_aaj5i"]
 [ext_resource type="Texture2D" uid="uid://dn18r1rmunktu" path="res://assets/puzzle_bg.png" id="5_xgn2r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdpdq"]
+texture = ExtResource("2_g3wb8")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dg0kg"]
 texture = ExtResource("2_mh0ah")
@@ -12,7 +16,7 @@ texture = ExtResource("2_mh0ah")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_edpjd"]
 texture = ExtResource("4_aaj5i")
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gdpdq"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lr7ur"]
 texture = ExtResource("5_xgn2r")
 
 [node name="Tutorial" type="Control"]
@@ -32,9 +36,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dg0kg")
+theme_override_styles/panel = SubResource("StyleBoxTexture_gdpdq")
 
 [node name="Label" type="Label" parent="Page1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -271.5
+offset_right = 350.0
+offset_bottom = 271.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("2_nrh6x")
+theme_override_font_sizes/font_size = 22
+text = "Nimue começa a viver em uma nova cidade pequena. Mudanças continuas são parte de sua vida, pois seu principal objetivo é manter seu segredo encoberto. Nimue era uma bruxa e não poderia deixar ninguém saber, mesmo que precisasse deixar pessoas que se importava para trás. 
+
+Porém seu pensamento positivo não a deixava na mão, ela tinha certeza que dessa vez conseguiria viver uma vida quieta e sem fazer com que ninguém suspeitasse de seu segredo. 
+
+Entretanto, sua vontade de ajudar os outros usando o conhecimento de bruxa que havia herdado também era grande. Ajude Nimue a balancear seus dois mundos sem que um atrapalhe o outro."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Page2" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dg0kg")
+
+[node name="Label" type="Label" parent="Page2"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -53,7 +96,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Page1"]
+[node name="Label2" type="Label" parent="Page2"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -76,7 +119,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Page2" type="Panel" parent="."]
+[node name="Page3" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -86,7 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_edpjd")
 
-[node name="Label" type="Label" parent="Page2"]
+[node name="Label" type="Label" parent="Page3"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -111,7 +154,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Page2"]
+[node name="Label2" type="Label" parent="Page3"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -138,7 +181,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Page3" type="Panel" parent="."]
+[node name="Page4" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -146,16 +189,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_gdpdq")
+theme_override_styles/panel = SubResource("StyleBoxTexture_lr7ur")
 
-[node name="Label" type="Label" parent="Page3"]
+[node name="Label" type="Label" parent="Page4"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -158.0
+offset_top = -158.5
 offset_right = 291.0
-offset_bottom = 159.0
+offset_bottom = 158.5
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -173,7 +216,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Label2" type="Label" parent="Page3"]
+[node name="Label2" type="Label" parent="Page4"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

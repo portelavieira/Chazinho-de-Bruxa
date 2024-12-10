@@ -3,7 +3,7 @@ extends Node2D
 var mensagem = preload("res://assets/witch-face-profile.webp")
 var chamomile = preload("res://assets/plants/chamomile_book.png")
 var hibiscus = preload("res://assets/plants/hibiscus_book.png")
-var gengibre = preload("res://icon.svg")
+var gengibre = preload("res://assets/plants/ginger_book.png")
 
 
 var flowers

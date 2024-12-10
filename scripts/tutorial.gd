@@ -3,6 +3,7 @@ extends Control
 @onready var page1 = $Page1
 @onready var page2 = $Page2
 @onready var page3 = $Page3
+@onready var page4 = $Page4
 
 @onready var forward = $Forward
 @onready var backward = $Backward
@@ -28,19 +29,28 @@ func _process(delta: float) -> void:
 		page1.show()
 		page2.hide()
 		page3.hide()
+		page4.hide()
 		
 	if page_counter == 2:
 		page1.hide()
 		page2.show()
 		page3.hide()
+		page4.hide()
 		
 	if page_counter == 3:
 		page1.hide()
 		page2.hide()
 		page3.show()
+		page4.hide()
 		
-	if page_counter >= 4:
-		page_counter = 4
+	if page_counter ==4:
+		page1.hide()
+		page2.hide()
+		page3.hide()
+		page4.show()
 		
-	if page_counter == 4:
+	if page_counter >= 5:
+		page_counter = 5
+		
+	if page_counter == 5:
 		get_tree().change_scene_to_file("res://cenas/main_scenes/house.tscn")
