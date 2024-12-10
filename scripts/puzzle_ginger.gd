@@ -47,13 +47,11 @@ func _input(event):
 		print_piece_states()
 
 		if check_all_pieces_aligned():
-			print("Você conseguiu!")
-			$Label3D.visible = true
-			set_process_input(false)
-			await get_tree().create_timer(2.5).timeout
-			_change_scene()
-			$Label3D.visible = false
-			Global.sucess = true
+			on_puzzle_complete()
+
+	# Verifica se a tecla "cheat_3" foi pressionada
+	if event.is_action_pressed("cheat_3"):
+		cheat_complete_puzzle()
 
 func print_piece_states():
 	# Itera pelas peças e imprime as informações de posição e ângulo
@@ -84,6 +82,27 @@ func check_all_pieces_aligned() -> bool:
 			return false
 
 	return true
+
+func cheat_complete_puzzle():
+	# Ajusta todas as peças para os alvos
+	for piece_name in target_transforms.keys():
+		var piece = get_node(piece_name)
+		var target_transform = target_transforms[piece_name]
+		var current_scale = piece.scale
+		piece.transform = target_transform
+		piece.scale = current_scale
+
+	print("Puzzle completado via cheat!")
+	on_puzzle_complete()
+
+func on_puzzle_complete():
+	print("Você conseguiu!")
+	$Label3D.visible = true
+	set_process_input(false)
+	await get_tree().create_timer(2.5).timeout
+	_change_scene()
+	$Label3D.visible = false
+	Global.sucess = true
 
 func _change_scene():
 	get_tree().change_scene_to_file("res://cenas/main_scenes/oficial-forest.tscn")

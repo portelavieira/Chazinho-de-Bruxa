@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://fuo77s2vdcm7"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_ginger.gd" id="1_0675h"]
-[ext_resource type="Texture2D" uid="uid://105ovxmmj4yt" path="res://assets/book/book_still.png" id="2_tsecr"]
+[ext_resource type="Texture2D" uid="uid://doij4m5db2gsi" path="res://assets/book/book_still_ginger.png" id="2_3ol7y"]
 [ext_resource type="PackedScene" uid="uid://dk7chr26qkdgf" path="res://assets/plants/ginger_root/ginger_root1.glb" id="3_nf0ce"]
 [ext_resource type="PackedScene" uid="uid://e0ygb6ufrcof" path="res://assets/plants/ginger_root/ginger_root2.glb" id="4_un7dc"]
 [ext_resource type="PackedScene" uid="uid://drjjxkvnr22lg" path="res://assets/plants/ginger_root/ginger_root3.glb" id="5_3dw1y"]
@@ -23,7 +23,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2e2d"]
-albedo_texture = ExtResource("2_tsecr")
+albedo_texture = ExtResource("2_3ol7y")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rb3ql"]
 material = SubResource("StandardMaterial3D_t2e2d")

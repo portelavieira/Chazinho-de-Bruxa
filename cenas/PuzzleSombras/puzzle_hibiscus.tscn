@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://c6uqndd3hh545"]
 
 [ext_resource type="Script" path="res://scripts/puzzle_hibiscus.gd" id="1_xxk6g"]
-[ext_resource type="Texture2D" uid="uid://105ovxmmj4yt" path="res://assets/book/book_still.png" id="2_4flda"]
+[ext_resource type="Texture2D" uid="uid://r8rsvvfmqxj4" path="res://assets/book/book_still_hibis.png" id="2_tgdpt"]
 [ext_resource type="PackedScene" uid="uid://d3m1x1s7dpncg" path="res://assets/plants/hibiscus/hibyscus_stem.glb" id="2_wh3ad"]
 [ext_resource type="PackedScene" uid="uid://87nu36jqjoc4" path="res://assets/plants/hibiscus/hibyscus_polinator.glb" id="3_noj43"]
 [ext_resource type="PackedScene" uid="uid://c71bqtsuha17m" path="res://cenas/HUDs/pause_menu.tscn" id="6_q22hw"]
@@ -21,7 +21,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2e2d"]
-albedo_texture = ExtResource("2_4flda")
+albedo_texture = ExtResource("2_tgdpt")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rb3ql"]
 material = SubResource("StandardMaterial3D_t2e2d")
